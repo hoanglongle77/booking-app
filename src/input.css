@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+.bg_browndirt {
+    background-color: #DDA15E;
+}
+
+.text_browndirt {
+    color: #DDA15E;
+}
+
+.bg_darkbrowndirt {
+    background-color: #BC6C25;
+}
+
+.text_darkbrowndirt {
+    color: #BC6C25;
+}

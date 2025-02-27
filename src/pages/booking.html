@@ -16,11 +16,81 @@
     </div>
 
 
-    <div class="my-2">
-        <h1 class="text-3xl font-bold text-center underline">
-            Booking Page
+
+    <div class="max-w-6xl mx-auto p-6">
+        <h1 class="text-6xl font-bold text_darkbrowndirt mb-10 mt-10">
+            Booking space page
         </h1>
+
+        <div class="flex flex-col md:flex-row gap-6 mb-9">
+            <form class="bg_browndirt p-6 rounded-lg flex-1">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                     <label class="block mb-2" for="first-name">
+                      First name
+                     </label>
+                     <input class="w-full bg-white p-2 border border-gray-300 rounded" id="first-name" type="text" placeholder="Jane" />
+                    </div>
+                    <div>
+                     <label class="block mb-2" for="last-name">
+                      Last name
+                     </label>
+                     <input class="w-full bg-white p-2 border border-gray-300 rounded" id="last-name" type="text" placeholder="Smitherton"/>
+                    </div>
+                   </div>
+                   <div class="mb-4">
+                    <label class="block mb-2" for="email">
+                     Email address
+                    </label>
+                    <input class="w-full bg-white p-2 border border-gray-300 rounded" id="email" type="email" placeholder="email@janesfakedomain.net"/>
+                   </div>
+                   <div class="mb-4">
+                    <label class="block mb-2" for="phone">
+                     Phone number
+                    </label>
+                    <input class="w-full bg-white p-2 border border-gray-300 rounded" id="phone" type="tel" placeholder="+84"/>
+                   </div>
+                   <div class="mb-4">
+                    <label class="block mb-2" for="table">
+                     Table
+                    </label>
+                    <select class="w-full bg-white p-2 border border-gray-300 rounded" id="table">
+                     <option>
+                      Choose a table
+                     </option>
+                    </select>
+                   </div>
+                   <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                     <label class="block mb-2" for="checkin-time">
+                      Checkin time
+                     </label>
+                     <input class="w-full bg-white p-2 border border-gray-300 rounded" id="checkin-time" type="time" placeholder="14:00"/>
+                    </div>
+                    <div>
+                     <label class="block mb-2" for="checkin-date">
+                      Checkin date
+                     </label>
+                     <input class="w-full bg-white p-2 border border-gray-300 rounded" id="checkin-date" type="date" placeholder="2025-02-27"/>
+                    </div>
+                   </div>
+                   <button class="bg_darkbrowndirt text-white px-4 py-2 rounded w-full" type="submit">
+                    Submit
+                   </button>
+
+            </form>
+
+            <div class="bg_browndirt p-6 rounded-lg">
+                <img alt="A well-decorated dining table with chairs in a bright room" class="rounded mb-4" height="300" src="https://storage.googleapis.com/a1aa/image/KHE5Oa0XvQaVzKF3Ms5YCFRlpUrh3M6JHAqXgtivPcI.jpg" width="400"/>
+                <p class="text-lg">
+                 Body text for whatever you'd like to share more.
+                </p>
+            </div>
+
+        </div>
     </div>
+
     <footer class="text-center">
         <h1>Footer</h1>
     </footer>
