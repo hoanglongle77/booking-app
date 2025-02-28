@@ -23,6 +23,12 @@
 .text_darkbrowndirt {
     color: #BC6C25;
 }
+
+.bg_darkbrowndirt:hover {
+    background-color: #924e13;
+    transition: 0.5s;
+}
+
 .nav-link {
     color: #4a5568;
     transition: color 0.3s ease-in-out;
