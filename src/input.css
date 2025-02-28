@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+.font-inter {
+    font-family: 'Inter', sans-serif;
+}
+
 .bg_browndirt {
     background-color: #DDA15E;
 }
