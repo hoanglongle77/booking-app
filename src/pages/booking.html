@@ -29,7 +29,7 @@
         </h1>
 
         <div class="flex flex-col md:flex-row gap-6 mb-9">
-            <form class="bg_browndirt p-6 rounded-lg flex-1">
+            <form id="booking-form" class="bg_browndirt p-6 rounded-lg flex-1">
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                     <div>
@@ -59,11 +59,11 @@
                 </div>
                 <div class="mb-4">
                     <label class="block mb-2" for="table">
-                        Table
+                        Space
                     </label>
-                    <select class="w-full bg-white p-2 border border-gray-300 rounded" id="table">
+                    <select class="w-full bg-white p-2 border border-gray-300 rounded" id="space">
                         <option>
-                        Choose a table
+                        Choose a space
                         </option>
                     </select>
                 </div>
@@ -87,21 +87,21 @@
                         <input class="w-full bg-white p-2 border border-gray-300 rounded" id="checkin-date" type="date" placeholder="2025-02-27"/>
                     </div>
                 </div>
-                <button class="bg_darkbrowndirt text-white px-4 py-2 rounded w-full" type="submit">
-                Submit
+                <button id="confirm-btn" class="bg_darkbrowndirt text-white px-4 py-2 rounded w-full hover:bg_darkbrowndirt" type="button">
+                    Confirm
                 </button>
 
             </form>
 
             <div class="bg_browndirt p-6 rounded-lg">
-                <img alt="A well-decorated dining table with chairs in a bright room" class="rounded mb-4" height="300" 
+                <img id="img_space" alt="img demo" class="rounded mb-4" height="300" 
                 src="https://storage.googleapis.com/a1aa/image/KHE5Oa0XvQaVzKF3Ms5YCFRlpUrh3M6JHAqXgtivPcI.jpg" width="400"/>
                 <div class="text-xl">
                     <b>$</b>
-                    <b>10.59</b>
+                    <b id="price_space">Free</b>
                 </div>
-                <p class="text-lg">
-                The best room for your family!!!
+                <p class="text-lg" id="description_space">
+                    Have a good day
                 </p>
             </div>
 
@@ -144,6 +144,12 @@
 
     <script src="../js/main.js"></script>
     <script src="../js/time.js"></script>
+    <script src="../js/booking.js"></script>
+    <script>
+        document.getElementById("confirm-btn").addEventListener("click", function() {
+            window.location.href = "./payment.html";
+        });
+    </script>
 
 </body>
 
