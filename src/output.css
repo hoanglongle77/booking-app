@@ -19,6 +19,7 @@
     --color-gray-600: oklch(0.446 0.03 256.802);
     --color-gray-700: oklch(0.373 0.034 259.733);
     --color-gray-800: oklch(0.278 0.033 256.848);
+    --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
     --container-6xl: 72rem;
@@ -402,6 +403,15 @@
   }
   .mt-16 {
     margin-top: calc(var(--spacing) * 16);
+
+  .mr-2 {
+    margin-right: calc(var(--spacing) * 2);
+  }
+  .mr-6 {
+    margin-right: calc(var(--spacing) * 6);
+  }
+  .mr-9 {
+    margin-right: calc(var(--spacing) * 9);
   }
   .mb-2 {
     margin-bottom: calc(var(--spacing) * 2);
@@ -414,6 +424,9 @@
   }
   .mb-6 {
     margin-bottom: calc(var(--spacing) * 6);
+  }
+  .mb-8 {
+    margin-bottom: calc(var(--spacing) * 8);
   }
   .mb-9 {
     margin-bottom: calc(var(--spacing) * 9);
@@ -1219,6 +1232,11 @@
   }
   .bg-gray-100 {
     background-color: var(--color-gray-100);
+  .bg-black {
+    background-color: var(--color-black);
+  }
+  .bg-orange-100 {
+    background-color: var(--color-orange-100);
   }
   .bg-gray-200 {
     background-color: var(--color-gray-200);
@@ -1433,6 +1451,9 @@
   }
   .py-6 {
     padding-block: calc(var(--spacing) * 6);
+    }
+  .py-8 {
+    padding-block: calc(var(--spacing) * 8);
   }
   .text-center {
     text-align: center;
@@ -2126,6 +2147,7 @@
       max-width: 380px;
     }
   }
+
   .sm\:grid-cols-2 {
     @media (width >= 40rem) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2186,6 +2208,11 @@
     @media (width >= 40rem) {
       font-size: var(--text-base);
       line-height: var(--tw-leading, var(--text-base--line-height));
+
+  .md\:mr-16 {
+    @media (width >= 48rem) {
+      margin-right: calc(var(--spacing) * 16);
+
     }
   }
   .md\:mb-0 {
@@ -2201,6 +2228,11 @@
   .md\:h-\[550px\] {
     @media (width >= 48rem) {
       height: 550px;
+    }
+  }
+  .md\:w-auto {
+    @media (width >= 48rem) {
+      width: auto;
     }
   }
   .md\:max-w-\[600px\] {
@@ -2221,6 +2253,16 @@
   .md\:flex-row {
     @media (width >= 48rem) {
       flex-direction: row;
+    }
+  }
+  .md\:items-center {
+    @media (width >= 48rem) {
+      align-items: center;
+    }
+  }
+  .md\:items-start {
+    @media (width >= 48rem) {
+      align-items: flex-start;
     }
   }
   .md\:space-x-6 {
