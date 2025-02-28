@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Home</title>
-<link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/css/splide.min.css"
-/>
-<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/js/splide.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <h1 >Home</h1>
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/css/splide.min.css"
+    />
+    <link href="../input.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/js/splide.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
-<script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100">
     <div id="header"></div>
     <main>
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20 py-6 sm:py-10 lg:py-16">
     <!-- Tiêu đề -->
-    <h1 class="text-2xl sm:text-3xl font-bold text-orange-600">Home</h1>
+    <h1 class="text-2xl sm:text-3xl font-bold text_darkbrowndirt">Home</h1>
     <p class="text-gray-600 mt-2 text-sm sm:text-base">
     Subheading that sets up context, shares more info about the website, or
     generally gets people psyched to keep scrolling.
     </p>
     <button
-    class="mt-4 px-4 sm:px-6 py-2 text-sm sm:text-base bg-orange-500 text-white rounded-md hover:bg-orange-600"
+    class="mt-4 px-4 sm:px-6 py-2 text-sm sm:text-base bg_darkbrowndirt text-white rounded-md hover:bg_browndirt"
     >
     Contact Us
     </button>
@@ -61,7 +62,7 @@
     </div>
 
     <!-- Danh sách các không gian -->
-    <h2 class="mt-8 text-xl sm:text-2xl font-semibold text-orange-600">
+    <h2 class="mt-8 text-xl sm:text-2xl font-semibold text_darkbrowndirt">
     Our space options
     </h2>
     <div
@@ -74,7 +75,7 @@
     <nav class="inline-flex space-x-1 sm:space-x-2 text-sm sm:text-base">
         <button
         onclick="prevPage()"
-        class="px-2 py-1 sm:px-4 sm:py-2 bg-orange-500 text-white rounded-l-md disabled:opacity-50"
+        class="px-2 py-1 sm:px-4 sm:py-2 bg_darkbrowndirt text-white rounded-l-md disabled:opacity-50"
         >
         Previous
         </button>
@@ -100,7 +101,7 @@
         </div>
         <button
         onclick="nextPage()"
-        class="px-2 py-1 sm:px-4 sm:py-2 bg-orange-500 text-white rounded-r-md disabled:opacity-50"
+        class="px-2 py-1 sm:px-4 sm:py-2 bg_darkbrowndirt text-white rounded-r-md disabled:opacity-50"
         >
         Next
         </button>
@@ -119,7 +120,7 @@
         />
     </div>
     <div>
-        <h2 class="text-xl sm:text-2xl font-semibold text-orange-600">
+        <h2 class="text-xl sm:text-2xl font-semibold text_darkbrowndirt">
         Reason to chose us
         </h2>
         <p class="text-gray-600 mt-2 text-sm sm:text-base">
@@ -135,12 +136,12 @@
         </div>
         <div class="mt-4 sm:mt-6 flex flex-col sm:flex-row gap-3">
         <button
-            class="px-4 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600 text-sm sm:text-base"
+            class="px-4 py-2 bg_darkbrowndirt text-white rounded-md hover:bg-orange-600 text-sm sm:text-base"
         >
             Booking now
         </button>
         <button
-            class="px-4 py-2 border border-orange-500 text-orange-600 rounded-md hover:bg-orange-100 text-sm sm:text-base"
+            class="px-4 py-2 border border_darkbrowndirt text_darkbrowndirt rounded-md hover:bg-orange-100 text-sm sm:text-base"
         >
             Contact Us
         </button>
@@ -149,7 +150,7 @@
     </div>
 
     <!-- Section heading -->
-    <h2 class="mt-16 text-2xl font-semibold text-orange-600">
+    <h2 class="mt-16 text-2xl font-semibold text_darkbrowndirt">
     Section heading
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
@@ -174,7 +175,7 @@
     </div>
 
     <!-- Customer Reviews -->
-    <h2 class="mt-16 text-2xl font-semibold text-orange-600">
+    <h2 class="mt-16 text-2xl font-semibold text_darkbrowndirt">
     Customer Reviews
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
@@ -400,11 +401,11 @@
     function updatePagination() {
     const buttons = document.querySelectorAll(".page-btn");
     buttons.forEach((btn, index) => {
-        btn.classList.remove("bg-orange-500", "text-white");
+        btn.classList.remove("bg_darkbrowndirt", "text-white");
         btn.classList.add("bg-gray-200", "hover:bg-gray-300");
 
         if (index + 1 === currentPage) {
-        btn.classList.add("bg-orange-500", "text-white");
+        btn.classList.add("bg_darkbrowndirt", "text-white");
         btn.classList.remove("bg-gray-200", "hover:bg-gray-300");
         }
     });
