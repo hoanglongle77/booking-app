@@ -1,0 +1,23 @@
+[
+  {
+    "userId": "c6bc03de-7749-4634-ba67-eadd981ac611",
+    "name": "Nguyen Van A",
+    "email": "nguyenvana@example.com",
+    "phone": "0987654321",
+    "role": "customer"
+  },
+  {
+    "userId": "128108a2-2222-47e5-9cf0-89ddcea1ca88",
+    "name": "Tran Thi B",
+    "email": "tranthib@example.com",
+    "phone": "0978123456",
+    "role": "customer"
+  },
+  {
+    "userId": "a65e44ba-1b8b-4b1e-9391-c69979a79e86",
+    "name": "Admin",
+    "email": "admin@example.com",
+    "phone": "0900123456",
+    "role": "admin"
+  }
+]
