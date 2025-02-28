@@ -9,7 +9,6 @@
     --color-red-300: oklch(0.808 0.114 19.571);
     --color-red-500: oklch(0.637 0.237 25.331);
     --color-orange-100: oklch(0.954 0.038 75.164);
-    --color-orange-500: oklch(0.705 0.213 47.604);
     --color-orange-600: oklch(0.646 0.222 41.116);
     --color-sky-700: oklch(0.5 0.134 242.749);
     --color-gray-100: oklch(0.967 0.003 264.542);
@@ -376,14 +375,29 @@
       max-width: 96rem !important;
     }
   }
+  .m-9 {
+    margin: calc(var(--spacing) * 9);
+  }
+  .mx-5 {
+    margin-inline: calc(var(--spacing) * 5);
+  }
   .mx-auto {
     margin-inline: auto;
   }
   .my-2 {
     margin-block: calc(var(--spacing) * 2);
   }
-  .ms-4 {
-    margin-inline-start: calc(var(--spacing) * 4);
+  .my-3 {
+    margin-block: calc(var(--spacing) * 3);
+  }
+  .my-4 {
+    margin-block: calc(var(--spacing) * 4);
+  }
+  .ms-5 {
+    margin-inline-start: calc(var(--spacing) * 5);
+  }
+  .me-6 {
+    margin-inline-end: calc(var(--spacing) * 6);
   }
   .mt-2 {
     margin-top: calc(var(--spacing) * 2);
@@ -402,6 +416,15 @@
   }
   .mt-16 {
     margin-top: calc(var(--spacing) * 16);
+  }
+  .mr-2 {
+    margin-right: calc(var(--spacing) * 2);
+  }
+  .mr-6 {
+    margin-right: calc(var(--spacing) * 6);
+  }
+  .mr-9 {
+    margin-right: calc(var(--spacing) * 9);
   }
   .mb-2 {
     margin-bottom: calc(var(--spacing) * 2);
@@ -540,6 +563,9 @@
   }
   .min-h-screen {
     min-height: 100vh;
+  }
+  .w-1 {
+    width: calc(var(--spacing) * 1);
   }
   .w-1\/2 {
     width: calc(1/2 * 100%);
@@ -1199,9 +1225,6 @@
   .border-gray-300 {
     border-color: var(--color-gray-300);
   }
-  .border-orange-500 {
-    border-color: var(--color-orange-500);
-  }
   .bg-\(--my_variable\) {
     background-color: var(--my_variable);
   }
@@ -1217,11 +1240,17 @@
   .bg-\[var\(--my_variable\)\] {
     background-color: var(--my_variable);
   }
+  .bg-black {
+    background-color: var(--color-black);
+  }
   .bg-gray-100 {
     background-color: var(--color-gray-100);
   }
   .bg-gray-200 {
     background-color: var(--color-gray-200);
+  }
+  .bg-orange-100 {
+    background-color: var(--color-orange-100);
   }
   .bg-orange-500 {
     background-color: var(--color-orange-500);
@@ -1434,6 +1463,9 @@
   .py-6 {
     padding-block: calc(var(--spacing) * 6);
   }
+  .py-8 {
+    padding-block: calc(var(--spacing) * 8);
+  }
   .text-center {
     text-align: center;
   }
@@ -1596,9 +1628,6 @@
   }
   .text-gray-800 {
     color: var(--color-gray-800);
-  }
-  .text-orange-600 {
-    color: var(--color-orange-600);
   }
   .text-red-500 {
     color: var(--color-red-500);
@@ -2188,6 +2217,11 @@
       line-height: var(--tw-leading, var(--text-base--line-height));
     }
   }
+  .md\:mr-16 {
+    @media (width >= 48rem) {
+      margin-right: calc(var(--spacing) * 16);
+    }
+  }
   .md\:mb-0 {
     @media (width >= 48rem) {
       margin-bottom: calc(var(--spacing) * 0);
@@ -2242,19 +2276,19 @@
       padding-block: calc(var(--spacing) * 16);
     }
   }
-  .xl\:me-3 {
+  .xl\:mx-0 {
     @media (width >= 80rem) {
-      margin-inline-end: calc(var(--spacing) * 3);
+      margin-inline: calc(var(--spacing) * 0);
     }
   }
-  .xl\:me-4 {
+  .xl\:mx-3 {
     @media (width >= 80rem) {
-      margin-inline-end: calc(var(--spacing) * 4);
+      margin-inline: calc(var(--spacing) * 3);
     }
   }
-  .xl\:flex {
+  .xl\:ms-4 {
     @media (width >= 80rem) {
-      display: flex;
+      margin-inline-start: calc(var(--spacing) * 4);
     }
   }
   .xl\:w-2\/5 {
@@ -2270,6 +2304,16 @@
   .xl\:flex-row {
     @media (width >= 80rem) {
       flex-direction: row;
+    }
+  }
+  .xl\:justify-center {
+    @media (width >= 80rem) {
+      justify-content: center;
+    }
+  }
+  .xl\:justify-end {
+    @media (width >= 80rem) {
+      justify-content: flex-end;
     }
   }
   .xl\:text-3xl {
@@ -2291,8 +2335,15 @@
 .bg_darkbrowndirt {
   background-color: #BC6C25;
 }
+.border_darkbrowndirt {
+  border: solid 1px #BC6C25;
+}
 .text_darkbrowndirt {
   color: #BC6C25;
+}
+.bg_darkbrowndirt:hover {
+  background-color: #924e13;
+  transition: 0.5s;
 }
 .nav-link {
   color: #4a5568;

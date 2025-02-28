@@ -8,7 +8,7 @@
         "name": "Seat A1",
         "price_per_hour": 50000,
         "status": "available",
-        "imageUrls": ["../images/abc.png"],
+        "imageUrls": ["../assets/img/meeting_8.jpg"],
         "location": "Tầng 1, khu A"
       }
     ]
@@ -23,7 +23,7 @@
         "typeId": "2",
         "price_per_hour": 200000,
         "status": "available",
-        "image": ["../images/abcd.png"],
+        "imageUrls": ["../assets/img/meeting_6.jpg"],
         "location": "Tầng 2, khu B"
       }
     ]
