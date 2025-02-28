@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Page</title>
     <link href="../output.css" rel="stylesheet">
+    <link href="../input.css" rel="stylesheet">
 </head>
 
 <body>
@@ -22,12 +23,65 @@
         </div>
     </header>
 
-    <div class="my-2">
-
-        <h1 class="text-3xl font-bold text-center">
-            Contact Page
-        </h1>
+    <div class="max-w-7xl mx-auto p-6">
+        <section class="mb-12">
+            <h1 class="font-inter text-4xl font-bold text_darkbrowndirt mb-2">
+                About Us
+            </h1>
+            <h2 class="text-xl text-gray-500 mb-4">
+                Subheading for description or instructions
+            </h2>
+            <p class="text-gray-800 mb-4">
+                Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might look:
+            </p>
+            <p class="text-gray-800 mb-4">
+                Excepteur efficient emerging, minim veniam anim aute carefully curated Ginza conversation exquisite perfect nostrud nisi intricate Content. Qui international first-class nulla ut. Punctual adipisicing, essential lovely queen tempor eiusmod irure. Exclusive izakaya charming Scandinavian impeccable aute quality of life soft power pariatur Melbourne occaecat discerning. Qui wardrobe aliquip, et Porter destination Toto remarkable officia Helsinki excepteur Basset hound. Zürich sleepy perfect consectetur.
+            </p>
+        </section>
+        <section>
+            <h1 class="font-inter text-4xl font-bold text_darkbrowndirt mb-6">
+            Contact Us
+            </h1>
+            <div class="flex flex-col md:flex-row md:space-x-6">
+                <form class="bg_browndirt p-6 rounded-lg flex-1 mb-6 md:mb-0">
+                    <div class="md:mb-4 sm:mb-2">
+                        <label class="block text-gray-700 mb-2" for="first-name">
+                        First name
+                        </label>
+                        <input class="w-full bg-white p-2 border border-gray-300 rounded" id="first-name" type="text" placeholder="Jane"/>
+                    </div>
+                    <div class="md:mb-4 sm:mb-2">
+                        <label class="block text-gray-700 mb-2" for="last-name">
+                        Last name
+                        </label>
+                        <input class="w-full bg-white p-2 border border-gray-300 rounded" id="last-name" type="text" placeholder="Smitherton"/>
+                    </div>
+                    <div class="md:mb-4 sm:mb-2">
+                        <label class="block text-gray-700 mb-2" for="email">
+                        Email address
+                        </label>
+                        <input class="w-full bg-white p-2 border border-gray-300 rounded" id="email" type="email" placeholder="email@janesfakedomain.net"/>
+                    </div>
+                    <div class="md:mb-4 sm:mb-2">
+                        <label class="block text-gray-700 mb-2" for="message">
+                        Your message
+                        </label>
+                        <textarea class="w-full bg-white p-2 border border-gray-300 rounded" id="message" rows="4" placeholder="Enter your question or message"></textarea>
+                    </div>
+                    <button class="w-full p-2 bg_darkbrowndirt text-white rounded hover:bg-sky-700">
+                    Submit
+                    </button>
+                </form>
+                <div class="flex-1 content-center">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d958.5693401433731!2d108.24179156954801!3d16.05109059903913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3142177cb45a6f95%3A0x5471bcc8d673a908!2zMTE2IE1haSBUaMO6YyBMw6JuLCBC4bqvYyBN4bu5IFBow7osIE5nxakgSMOgbmggU8ahbiwgxJDDoCBO4bq1bmcgNTUwMDAwLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1740646896092!5m2!1svi!2s" 
+                    class="rounded-md w-full h-[500px] md:max-w-[600px] md:h-[550px] sm:max-w-[380px] sm:h-[400px]" 
+                    width="600" height="550" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
     </div>
+
+      
     <footer class="footer">
         <!-- Left Section: Logo & Booking Space -->
         <div class="footer-section left-section">
@@ -59,144 +113,8 @@
         </div>
     </footer>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            background-color: #f4f1ea;
-        }
-
-        .footer {
-            background: #ffffff;
-            color: black;
-            padding: 20px 5%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            text-align: center;
-            border-top: 1px solid #ddd;
-        }
-
-        .footer-section {
-            flex: 1;
-        }
-
-        .left-section {
-            text-align: left;
-        }
-
-        .left-section img {
-            width: 100px;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        .left-section p {
-            margin-top: 10px;
-            font-size: 16px;
-            font-weight: bold;
-            color: black;
-        }
-
-        .center-section {
-            text-align: center;
-        }
-
-        .center-section .links {
-            margin-bottom: 10px;
-        }
-
-        .center-section a {
-            color: black;
-            text-decoration: none;
-            margin: 0 10px;
-            font-weight: bold;
-        }
-
-        .center-section a:hover {
-            color: gray;
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 10px;
-        }
-
-        .social-icons a {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: black;
-            font-weight: bold;
-            gap: 8px;
-        }
-
-        .social-icons img {
-            width: 30px;
-            transition: transform 0.3s;
-        }
-
-        .social-icons a:hover img {
-            transform: scale(1.1);
-        }
-
-        .right-section {
-            text-align: right;
-        }
-
-        .right-section input {
-            padding: 8px;
-            width: 60%;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .right-section button {
-            padding: 8px 15px;
-            background-color: black;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-left: 5px;
-        }
-
-        .right-section button:hover {
-            background-color: gray;
-            color: white;
-        }
-
-        @media (max-width: 768px) {
-            .footer {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .left-section, .right-section {
-                text-align: center;
-                margin-top: 15px;
-            }
-
-            .right-section input {
-                width: 80%;
-            }
-
-            .social-icons {
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
-    </style>
     <script src="../js/main.js"></script>
-
+    <script src="../js/time.js"></script>
 </body>
 
 </html>
