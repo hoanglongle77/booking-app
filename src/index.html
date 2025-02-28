@@ -9,14 +9,20 @@
 </head>
 
 <body>
-    <header class="flex flex-row justify-around mt-2">
-        <a href="./index.html">Home Page</a>
-        <a href="./pages/booking.html">Booking Page</a>
-        <a href="./pages/contact.html">Contact Page</a>
+    <header class="flex flex-col justify-between items-center py-4 xl:flex-row">
+        <div class="w-full flex flex-row justify-center items-center mb-3 xl:w-2/5 xl:justify-center">
+            <img src="./assets/logo.png" alt="Logo" class="me-6 xl:mx-0" />
+            <h1 class="font-bold text-2xl xl:text-3xl xl:ms-4">Booking Space</h1>
+        </div>
+        <div class="w-full flex flex-row justify-center items-center xl:w-3/5 xl:justify-end ">
+            <a class="nav-link mx-5 font-bold xl:mx-3 " href="./index.html">Home</a>
+            <a class="nav-link mx-5 font-bold xl:mx-3 " href="./pages/booking.html">Booking</a>
+            <a class="nav-link mx-5 font-bold xl:mx-3" href="./pages/contact.html">Contact</a>
+        </div>
     </header>
 
-    <div class="my-2">
-        <h1 class="text-3xl font-bold text-center underline">
+    <div class="mt-2">
+        <h1 class="text-3xl font-bold text-center">
             Home Page
         </h1>
     </div>
@@ -59,6 +65,7 @@
     </footer>
     
     <script src="./js/main.js"></script>
+
 </body>
 
 </html>

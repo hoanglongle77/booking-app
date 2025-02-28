@@ -6,26 +6,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Page</title>
     <link href="../output.css" rel="stylesheet">
+    <link href="../input.css" rel="stylesheet">
 </head>
 
+<body>
+    <header class="flex flex-col justify-between items-center py-4 xl:flex-row">
+        <div class="w-full flex flex-row justify-center items-center mb-3 xl:w-2/5 xl:justify-center">
+            <img src="../assets/logo.png" alt="Logo" class="me-6 xl:mx-0" />
+            <h1 class="font-bold text-2xl xl:text-3xl xl:ms-4">Booking Space</h1>
+        </div>
+        <div class="w-full flex flex-row justify-center items-center xl:w-3/5 xl:justify-end ">
+            <a class="nav-link mx-5 font-bold xl:mx-3 " href="../index.html">Home</a>
+            <a class="nav-link mx-5 font-bold xl:mx-3 " href="./booking.html">Booking</a>
+            <a class="nav-link mx-5 font-bold xl:mx-3" href="./contact.html">Contact</a>
+        </div>
+    </header>
 
-<header class="flex flex-row justify-around mt-2">
-    <a href="../index.html">Home Page</a>
-    <a href="./booking.html">Booking Page</a>
-    <a href="./contact.html">Contact Page</a>
-</header>
+    <div class="max-w-7xl mx-auto p-6">
+        <section class="mb-12">
+            <h1 class="font-inter text-4xl font-bold text_darkbrowndirt mb-2">
+                About Us
+            </h1>
+            <h2 class="text-xl text-gray-500 mb-4">
+                Subheading for description or instructions
+            </h2>
+            <p class="text-gray-800 mb-4">
+                Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page
+                might look:
+            </p>
+            <p class="text-gray-800 mb-4">
+                Excepteur efficient emerging, minim veniam anim aute carefully curated Ginza conversation exquisite
+                perfect nostrud nisi intricate Content. Qui international first-class nulla ut. Punctual adipisicing,
+                essential lovely queen tempor eiusmod irure. Exclusive izakaya charming Scandinavian impeccable aute
+                quality of life soft power pariatur Melbourne occaecat discerning. Qui wardrobe aliquip, et Porter
+                destination Toto remarkable officia Helsinki excepteur Basset hound. Zürich sleepy perfect consectetur.
+            </p>
+        </section>
+        <section>
+            <h1 class="font-inter text-4xl font-bold text_darkbrowndirt mb-6">
+                Contact Us
+            </h1>
+            <div class="flex flex-col md:flex-row md:space-x-6">
+                <form class="bg_browndirt p-6 rounded-lg flex-1 mb-6 md:mb-0">
+                    <div class="md:mb-4 sm:mb-2">
+                        <label class="block text-gray-700 mb-2" for="first-name">
+                            First name
+                        </label>
+                        <input class="w-full bg-white p-2 border border-gray-300 rounded" id="first-name" type="text"
+                            placeholder="Jane" />
+                    </div>
+                    <div class="md:mb-4 sm:mb-2">
+                        <label class="block text-gray-700 mb-2" for="last-name">
+                            Last name
+                        </label>
+                        <input class="w-full bg-white p-2 border border-gray-300 rounded" id="last-name" type="text"
+                            placeholder="Smitherton" />
+                    </div>
+                    <div class="md:mb-4 sm:mb-2">
+                        <label class="block text-gray-700 mb-2" for="email">
+                            Email address
+                        </label>
+                        <input class="w-full bg-white p-2 border border-gray-300 rounded" id="email" type="email"
+                            placeholder="email@janesfakedomain.net" />
+                    </div>
+                    <div class="md:mb-4 sm:mb-2">
+                        <label class="block text-gray-700 mb-2" for="message">
+                            Your message
+                        </label>
+                        <textarea class="w-full bg-white p-2 border border-gray-300 rounded" id="message" rows="4"
+                            placeholder="Enter your question or message"></textarea>
+                    </div>
+                    <button class="w-full p-2 bg_darkbrowndirt text-white rounded hover:bg-sky-700">
+                        Submit
+                    </button>
+                </form>
+                <div class="flex-1 content-center">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d958.5693401433731!2d108.24179156954801!3d16.05109059903913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3142177cb45a6f95%3A0x5471bcc8d673a908!2zMTE2IE1haSBUaMO6YyBMw6JuLCBC4bqvYyBN4bu5IFBow7osIE5nxakgSMOgbmggU8ahbiwgxJDDoCBO4bq1bmcgNTUwMDAwLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1740646896092!5m2!1svi!2s"
+                        class="rounded-md w-full h-[500px] md:max-w-[600px] md:h-[550px] sm:max-w-[380px] sm:h-[400px]"
+                        width="600" height="550" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+    </div>
 
-<div class="my-2">
-    <h1 class="text-3xl font-bold text-center underline">
-        Contact Page
-    </h1>
-</div>
-
-<footer class="py-8 bg-white text-gray-800">
-    <div class="container mx-auto flex flex-col md:flex-row justify-around items-center">
-        <div class="flex flex-col items-center md:items-center mb-8 md:mb-0">
-            <img src="../assets/logo space.png" class="mb-4" height="100" width="100" />
-            <h1 class="text-xl font-bold">Booking Space</h1>
+    <footer class="footer">
+        <!-- Left Section: Logo & Booking Space -->
+        <div class="footer-section left-section">
+            <img src="../assets/logo space.png" alt="logo">
+            <p>Booking Space</p>
         </div>
         <div class="flex flex-col md:flex-row justify-between w-full md:w-auto">
             <div class="flex flex-col items-center md:items-start mb-8 md:mb-0 md:mr-16">
