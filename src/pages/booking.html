@@ -36,14 +36,14 @@
                             First name
                         </label>
                         <input class="w-full bg-white p-2 border border-gray-300 rounded" id="first-name" type="text"
-                            placeholder="Jane" />
+                            placeholder="Jane" required/>
                     </div>
                     <div>
                         <label class="block mb-2" for="last-name">
                             Last name
                         </label>
                         <input class="w-full bg-white p-2 border border-gray-300 rounded" id="last-name" type="text"
-                            placeholder="Smitherton" />
+                            placeholder="Smitherton" required/>
                     </div>
                 </div>
                 <div class="mb-4">
@@ -51,21 +51,21 @@
                         Email address
                     </label>
                     <input class="w-full bg-white p-2 border border-gray-300 rounded" id="email" type="email"
-                        placeholder="email@janesfakedomain.net" />
+                        placeholder="email@janesfakedomain.net" required/>
                 </div>
                 <div class="mb-4">
                     <label class="block mb-2" for="phone">
                         Phone number
                     </label>
                     <input class="w-full bg-white p-2 border border-gray-300 rounded" id="phone" type="tel"
-                        placeholder="+84" />
+                        placeholder="+84" required/>
                 </div>
                 <div class="mb-4">
                     <label class="block mb-2" for="table">
                         Space
                     </label>
-                    <select class="w-full bg-white p-2 border border-gray-300 rounded" id="space">
-                        <option>
+                    <select class="w-full bg-white p-2 border border-gray-300 rounded" id="space" required>
+                        <option value="">
                         Choose a space
                         </option>
                     </select>
@@ -76,24 +76,24 @@
                             Checkin time
                         </label>
                         <input class="w-full bg-white p-2 border border-gray-300 rounded" id="checkin-time" type="time"
-                            placeholder="14:00" />
+                            placeholder="14:00" required/>
                     </div>
                     <div>
                         <label class="block mb-2" for="checkout-time">
                             Checkout time
                         </label>
                         <input class="w-full bg-white p-2 border border-gray-300 rounded" id="checkout-time" type="time"
-                            placeholder="17:00" />
+                            placeholder="17:00" required/>
                     </div>
                     <div>
                         <label class="block mb-2" for="checkin-date">
                             Checkin date
                         </label>
                         <input class="w-full bg-white p-2 border border-gray-300 rounded" id="checkin-date" type="date"
-                            placeholder="2025-02-27" />
+                            placeholder="2025-02-27" required/>
                     </div>
                 </div>
-                <button id="confirm-btn" class="bg_darkbrowndirt text-white px-4 py-2 rounded w-full hover:bg_darkbrowndirt" type="button">
+                <button id="confirm-btn" class="bg_darkbrowndirt text-white px-4 py-2 rounded w-full hover:bg_darkbrowndirt" type="submit">
                     Confirm
                 </button>
 
@@ -151,13 +151,6 @@
             </div>
         </div>
 
-        <!-- Right Section: Newsletter -->
-        <div class="footer-section right-section">
-            <h3>Subscribe to Our Newsletter</h3>
-            <input type="email" placeholder="Enter Your Email Address">
-            <button>SUBSCRIBE</button>
-        </div>
-
     </footer>
 
     <p id="error-message" class="text-red-500 mt-2"></p>
@@ -166,9 +159,36 @@
     <script src="../js/time.js"></script>
     <script src="../js/booking.js"></script>
     <script>
-        document.getElementById("confirm-btn").addEventListener("click", function() {
-            window.location.href = "./payment.html";
-        });
+        document.getElementById("booking-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const firstName = document.getElementById("first-name").value.trim();
+        const lastName = document.getElementById("last-name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const space = document.getElementById("space").value;
+        const checkinDate = document.getElementById("checkin-date").value;
+        const checkinTime = document.getElementById("checkin-time").value;
+        const checkoutTime = document.getElementById("checkout-time").value;
+
+        if (!firstName || !lastName || !email || !phone || !space || !checkinDate || !checkinTime || !checkoutTime) {
+            alert("You need too type information!");
+            return;
+        }
+
+        const bookingData = {
+            firstName,
+            lastName,
+            email,
+            phone,
+            space,
+            checkinDate,
+            checkinTime,
+            checkoutTime
+        };
+        localStorage.setItem("bookingData", JSON.stringify(bookingData));
+        window.location.href = "./payment.html";
+    });
     </script>
 
 </body>
