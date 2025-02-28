@@ -1,5 +1,28 @@
 @import "tailwindcss";
 
+.font-inter {
+    font-family: 'Inter', sans-serif;
+}
+
+.bg_browndirt {
+    background-color: #DDA15E;
+}
+
+.text_browndirt {
+    color: #DDA15E;
+}
+
+.bg_darkbrowndirt {
+    background-color: #BC6C25;
+}
+
+.border_darkbrowndirt {
+    border: solid 1px #BC6C25;
+}
+
+.text_darkbrowndirt {
+    color: #BC6C25;
+}
 .nav-link {
     color: #4a5568;
     transition: color 0.3s ease-in-out;

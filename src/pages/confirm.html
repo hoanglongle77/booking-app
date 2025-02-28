@@ -5,79 +5,285 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confirmation Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
     <link href="../output.css" rel="stylesheet">
+
+
 </head>
 
-<body class="md:m-16 sm:m-16 ">
+<body class="md:mx-16 sm:mx-16 p-4 pt-16">
     <div id="header">
     </div>
 
-    <section class="grid grid-cols-1 md:grid-cols-2 gap-8 p-4 max-w-full">
-        <img class="w-full max-w-full h-auto object-fill rounded-lg shadow-lg" src="/src/assets/facebook.png" alt="haha" />
+    <section class="grid grid-cols-1 md:grid-cols-2 md:gap-20 max-w-full">
+        <img class="w-full max-h-[800px] sm:max-h-[500px] object-cover rounded-lg shadow-md" src="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_800,h_500/https://duhunggroups.com/wp-content/uploads/2022/09/sfe.jpg" alt="haha" />
 
-        <div class="flex flex-col justify-center">
-            <h1 class="text-2xl font-bold">Space 1</h1>
-            <p class="text-gray-600">Time: 14:00</p>
-            <p class="text-gray-600">Check-in Date: 27/02/2025</p>
-            <p class="text-gray-600">Check-out Date: 27/02/2025</p>
-            <p class="text-xl font-bold">$10.99</p>
-            <p class="text-gray-500">Body text for describing what this product is and why this product is simply a must-buy.</p>
-            <button class="bg-orange-500 text-white px-6 py-3 rounded mt-4 hover:bg-orange-600 transition">
-                Pay
-            </button>
+        <div class="flex justify-center items-center">
+            <div class=" max-w-sm w-full">
+                <h1 class="text-2xl font-bold">Space 1</h1>
+        
+                <div class="mt-3">
+                    <p class="text-gray-600 font-bold font-inter inline-block w-20">Time</p>
+                    <span class="text-gray-700">14:00</span>
+                </div>
+        
+                <div class="mt-2">
+                    <p class="text-gray-600 font-bold font-inter inline-block w-20">Date</p>
+                    <span class="text-gray-700">27/02/2025</span>
+                </div>
+        
+                <p class="text-xl font-bold mt-4">$10.99</p>
+                <p class="text-gray-500 mt-2">
+                    Body text for describing what this product is and why this product is simply a must-buy.
+                </p>
+        
+                <button class="bg-[#BC6C25] text-white px-6 py-3 rounded mt-4 w-full hover:bg-[#9E5A1E] transition">
+                    Pay
+                </button>
+            </div>
         </div>
     </section>
     
-   <section>
-    <h2 class="text-2xl font-semibold mb-6">Related products</h2>
-    <div id="list-item" class="grid md:grid-cols-3 sm:grid-cols-1 gap-4">
-        <div class="p-4 bg-white shadow-lg rounded-lg">
-            <img src="/src/assets/facebook.png" alt="${product.name}" class="w-full h-40 object-cover rounded-md" />
-            <h3 class="mt-2 font-semibold">${product.name}</h3>
-            <p class="text-gray-600">${product.desc}</p>
-            <p class="font-bold mt-2">${product.price}</p>
-        </div>
-        <div class="p-4 bg-white shadow-lg rounded-lg">
-            <img src="/src/assets/facebook.png" alt="${product.name}" class="w-full h-40 object-cover rounded-md" />
-            <h3 class="mt-2 font-semibold">${product.name}</h3>
-            <p class="text-gray-600">${product.desc}</p>
-            <p class="font-bold mt-2">${product.price}</p>
-        </div>
-        <div class="p-4 bg-white shadow-lg rounded-lg">
-            <img src="/src/assets/facebook.png" alt="${product.name}" class="w-full h-40 object-fill rounded-md" />
-            <h3 class="mt-2 font-semibold">${product.name}</h3>
-            <p class="text-gray-600">${product.desc}</p>
-            <p class="font-bold mt-2">${product.price}</p>
-        </div>
-        <div class="p-4 bg-white shadow-lg rounded-lg">
-            <img src="${product.img}" alt="${product.name}" class="w-full h-40 object-cover rounded-md" />
-            <h3 class="mt-2 font-semibold">${product.name}</h3>
-            <p class="text-gray-600">${product.desc}</p>
-            <p class="font-bold mt-2">${product.price}</p>
-        </div>
+   <section class="mt-20">
+    <h2 class="text-2xl font-inter mb-6">Related products</h2>
+        <div
+        id="space-container"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 mt-4 transition-opacity duration-300 opacity-100"
+        ></div>
+    
+        <div class="flex justify-center mt-6">
+        <nav class="inline-flex space-x-1 sm:space-x-2 text-sm sm:text-base">
+            <button
+            onclick="prevPage()"
+            class="px-2 py-1 sm:px-4 sm:py-2 bg_darkbrowndirt text-white rounded-l-md disabled:opacity-50"
+            >
+            Previous
+            </button>
+            <div class="flex space-x-1 sm:space-x-2">
+            <button
+                onclick="changePage(1)"
+                class="page-btn px-2 py-1 sm:px-4 sm:py-2 bg-gray-200 hover:bg-gray-300"
+            >
+                1
+            </button>
+            <button
+                onclick="changePage(2)"
+                class="page-btn px-2 py-1 sm:px-4 sm:py-2 bg-gray-200 hover:bg-gray-300"
+            >
+                2
+            </button>
+            <button
+                onclick="changePage(3)"
+                class="page-btn px-2 py-1 sm:px-4 sm:py-2 bg-gray-200 hover:bg-gray-300"
+            >
+                3
+            </button>
+            </div>
+            <button
+            onclick="nextPage()"
+            class="px-2 py-1 sm:px-4 sm:py-2 bg_darkbrowndirt text-white rounded-r-md disabled:opacity-50"
+            >
+            Next
+            </button>
+        </nav>
         </div>  
 
 </body>
-<!-- <script>
-    document.addEventListener("DOMContentLoaded", () => {
-    const roomList = document.getElementById("list-item");
-    const items = [1, 2, 3, 4, 5, 6];
+<script>
 
-    // Sử dụng map để tạo HTML, sau đó nối bằng join('')
-    roomList.innerHTML = items
-        .map(
-            (i) => `
-        <div class="p-4 max-w-sm">
-            <div class="flex rounded-lg h-full dark:bg-gray-800 bg-teal-400 p-8 flex-col">
-                <img src="/room${i}.jpg" alt="${i}" class="w-full h-40 object-cover rounded-md" />
-                <h3 class="mt-2 font-semibold">Space ${i}</h3>
-                <p class="text-gray-600">Description of ${i}th product</p>
-                <p class="font-bold mt-2">$10.99</p>
-            </div>
-        </div>
-    `
-        )
-        .join(""); // Nối tất cả thành một chuỗi HTML
-});
-</script> -->
+    const spaces = [
+    {
+        img: "https://maisonoffice.vn/wp-content/uploads/2022/09/cho-thue-phong-hop-theo-gio-tai-tphcm.jpg",
+        name: "Space 1",
+        description:
+        "A modern meeting space equipped with high-speed internet and ergonomic seating.",
+    },
+    {
+        img: "https://nhatnamvn.com/data/media/1388/images/Du-an-2120.jpg",
+        name: "Space 2",
+        description:
+        "Spacious conference room with state-of-the-art presentation tools and soundproof walls.",
+    },
+    {
+        img: "https://mychair.vn/wp-content/uploads/2023/11/thue-phong-hop-tphcm-phong-hop-cao-cap-ibc-office.jpg",
+        name: "Space 3",
+        description:
+        "Premium meeting room with luxury furniture, ideal for business negotiations.",
+    },
+    {
+        img: "https://phucthanhnhan.com/contents_images/images/phong-hop-truc-tuyen-la-gi.jpg",
+        name: "Space 4",
+        description:
+        "A flexible online meeting space with high-quality video conferencing support.",
+    },
+    {
+        img: "https://thesentry.com.vn/wp-content/uploads/2024/09/12-phong-hop-cho-thue-theo-gio-linh-hoat-tai-tphcm-2.jpg",
+        name: "Space 5",
+        description:
+        "Flexible hourly rental space with customizable seating arrangements.",
+    },
+    {
+        img: "https://thanhnhua.vn/media/data/san-pham/ghe_khan_dai/gh%E1%BA%BF_ph%C3%B2ng_h%E1%BB%8Dp1.jpg",
+        name: "Space 6",
+        description:
+        "Affordable meeting space with basic amenities for startups and small teams.",
+    },
+    {
+        img: "https://phucthanhnhan.com/contents_images/images/phong-hop-truc-tuyen-la-gi.jpg",
+        name: "Space 7",
+        description:
+        "Virtual-ready meeting room with advanced digital collaboration tools.",
+    },
+    {
+        img: "https://thesentry.com.vn/wp-content/uploads/2024/09/12-phong-hop-cho-thue-theo-gio-linh-hoat-tai-tphcm-2.jpg",
+        name: "Space 8",
+        description:
+        "Compact but fully-equipped space perfect for brainstorming sessions.",
+    },
+    {
+        img: "https://thanhnhua.vn/media/data/san-pham/ghe_khan_dai/gh%E1%BA%BF_ph%C3%B2ng_h%E1%BB%8Dp1.jpg",
+        name: "Space 9",
+        description:
+        "Economical choice for casual meetings and team collaborations.",
+    },
+    {
+        img: "https://maisonoffice.vn/wp-content/uploads/2022/09/cho-thue-phong-hop-theo-gio-tai-tphcm.jpg",
+        name: "Space 10",
+        description:
+        "A professional setting for corporate training sessions and large group discussions.",
+    },
+    {
+        img: "https://nhatnamvn.com/data/media/1388/images/Du-an-2120.jpg",
+        name: "Space 11",
+        description:
+        "An aesthetically designed space ideal for executive board meetings.",
+    },
+    {
+        img: "https://mychair.vn/wp-content/uploads/2023/11/thue-phong-hop-tphcm-phong-hop-cao-cap-ibc-office.jpg",
+        name: "Space 12",
+        description:
+        "High-end meeting room with premium services for exclusive gatherings.",
+    },
+    {
+        img: "https://thanhnhua.vn/media/data/san-pham/ghe_khan_dai/gh%E1%BA%BF_ph%C3%B2ng_h%E1%BB%8Dp1.jpg",
+        name: "Space 13",
+        description:
+        "Simple yet comfortable workspace designed for focused discussions.",
+    },
+    {
+        img: "https://maisonoffice.vn/wp-content/uploads/2022/09/cho-thue-phong-hop-theo-gio-tai-tphcm.jpg",
+        name: "Space 14",
+        description:
+        "Well-lit meeting room with adaptable layout options for different needs.",
+    },
+    {
+        img: "https://nhatnamvn.com/data/media/1388/images/Du-an-2120.jpg",
+        name: "Space 15",
+        description:
+        "Large conference hall equipped with high-tech audiovisual support.",
+    },
+    {
+        img: "https://nhatnamvn.com/data/media/1388/images/Du-an-2120.jpg",
+        name: "Space 16",
+        description:
+        "Private and quiet room, perfect for confidential business discussions.",
+    },
+    {
+        img: "https://mychair.vn/wp-content/uploads/2023/11/thue-phong-hop-tphcm-phong-hop-cao-cap-ibc-office.jpg",
+        name: "Space 17",
+        description:
+        "A sophisticated environment designed for elite corporate meetings.",
+    },
+    {
+        img: "https://phucthanhnhan.com/contents_images/images/phong-hop-truc-tuyen-la-gi.jpg",
+        name: "Space 18",
+        description:
+        "An innovative space for hybrid meetings with seamless digital integration.",
+    },
+    ];
+
+    let currentPage = 1;
+    let spacesPerPage = window.innerWidth < 640 ? 3 : 6; 
+    window.addEventListener("resize", () => {
+    const newSpacesPerPage = window.innerWidth < 640 ? 3 : 6;
+    if (newSpacesPerPage !== spacesPerPage) {
+        spacesPerPage = newSpacesPerPage;
+        currentPage = 1; 
+        renderSpaces();
+    }
+    });
+
+    function renderSpaces() {
+        
+    const container = document.getElementById("space-container");
+    container.classList.add("opacity-0");
+
+    setTimeout(() => {
+        container.innerHTML = "";
+
+        const start = (currentPage - 1) * spacesPerPage;
+        const end = start + spacesPerPage;
+        const currentSpaces = spaces.slice(start, end);
+
+        currentSpaces.forEach((space) => {
+        const div = document.createElement("div");
+        div.className =
+            "bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300";
+        div.innerHTML = `
+                <img src="${space.img}" class="w-full md:h-60 sm:h-50 object-cover rounded-lg" alt="${space.name}">
+                <div class="p-4">
+                    <h3 class="text-lg font-bold">${space.name}</h3>
+                    <p class="text-gray-600 mt-2">${space.description}</p>
+                </div>
+            `;
+        container.appendChild(div);
+        });
+        container.classList.remove("opacity-0");
+        container.classList.add("opacity-100");
+    }, 300);
+
+    updatePagination();
+    }
+
+    function updatePagination() {
+    const buttons = document.querySelectorAll(".page-btn");
+    buttons.forEach((btn, index) => {
+        btn.classList.remove("bg_darkbrowndirt", "text-white");
+        btn.classList.add("bg-gray-200", "hover:bg-gray-300");
+
+        if (index + 1 === currentPage) {
+        btn.classList.add("bg_darkbrowndirt", "text-white");
+        btn.classList.remove("bg-gray-200", "hover:bg-gray-300");
+        }
+    });
+    }
+
+    function changePage(page) {
+    if (page >= 1 && page <= 3) {
+        currentPage = page;
+        renderSpaces();
+    }
+    }
+
+    function nextPage() {
+    if (currentPage < 3) {
+        currentPage++;
+    } else {
+        currentPage = 1; // Nếu đang ở trang 3, quay lại trang 1
+    }
+    renderSpaces();
+    }
+    function prevPage() {
+    if (currentPage > 1) {
+        currentPage--;
+    } else {
+        currentPage = 3; // Nếu đang ở trang 1, quay lại trang 3
+    }
+    renderSpaces();
+    }
+
+    renderSpaces();
+
+</script>
 </html>
