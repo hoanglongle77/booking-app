@@ -62,13 +62,14 @@
                 </div>
                 <div class="mb-4">
                     <label class="block mb-2" for="table">
-                        Space
+                        Type
                     </label>
                     <select class="w-full bg-white p-2 border border-gray-300 rounded" id="space" required>
-                        <option value="">
-                        Choose a space
-                        </option>
+
                     </select>
+                </div>
+                <div id="seat">
+
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
                     <div>
@@ -157,7 +158,7 @@
 
     <script src="../js/main.js"></script>
     <script src="../js/time.js"></script>
-    <script src="../js/booking.js"></script>
+    <script type="module" src="../js/booking.js"></script>
     <script>
         document.getElementById("booking-form").addEventListener("submit", function(event) {
         event.preventDefault();

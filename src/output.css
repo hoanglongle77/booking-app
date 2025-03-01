@@ -6,6 +6,7 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-red-300: oklch(0.808 0.114 19.571);
     --color-red-500: oklch(0.637 0.237 25.331);
     --color-orange-100: oklch(0.954 0.038 75.164);
     --color-orange-500: oklch(0.705 0.213 47.604);
@@ -424,6 +425,9 @@
   }
   .mt-16 {
     margin-top: calc(var(--spacing) * 16);
+  }
+  .mt-20 {
+    margin-top: calc(var(--spacing) * 20);
   }
   .mr-2 {
     margin-right: calc(var(--spacing) * 2);
@@ -2272,6 +2276,11 @@
       line-height: var(--tw-leading, var(--text-base--line-height));
     }
   }
+  .md\:mx-16 {
+    @media (width >= 48rem) {
+      margin-inline: calc(var(--spacing) * 16);
+    }
+  }
   .md\:mr-16 {
     @media (width >= 48rem) {
       margin-right: calc(var(--spacing) * 16);
@@ -2285,6 +2294,11 @@
   .md\:mb-4 {
     @media (width >= 48rem) {
       margin-bottom: calc(var(--spacing) * 4);
+    }
+  }
+  .md\:h-60 {
+    @media (width >= 48rem) {
+      height: calc(var(--spacing) * 60);
     }
   }
   .md\:h-\[550px\] {
@@ -2327,6 +2341,11 @@
       align-items: flex-start;
     }
   }
+  .md\:gap-20 {
+    @media (width >= 48rem) {
+      gap: calc(var(--spacing) * 20);
+    }
+  }
   .md\:space-x-6 {
     @media (width >= 48rem) {
       :where(& > :not(:last-child)) {
@@ -2359,21 +2378,6 @@
   .xl\:ms-4 {
     @media (width >= 80rem) {
       margin-inline-start: calc(var(--spacing) * 4);
-    }
-  }
-  .xl\:me-3 {
-    @media (width >= 80rem) {
-      margin-inline-end: calc(var(--spacing) * 3);
-    }
-  }
-  .xl\:me-4 {
-    @media (width >= 80rem) {
-      margin-inline-end: calc(var(--spacing) * 4);
-    }
-  }
-  .xl\:flex {
-    @media (width >= 80rem) {
-      display: flex;
     }
   }
   .xl\:w-2\/5 {
