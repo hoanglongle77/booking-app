@@ -31,3 +31,20 @@
 .nav-link:hover {
     color: #2563eb;
 }
+
+.booking-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ce721d;
+    color: white;
+    padding: 15px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+.booking-button:hover {
+    background-color: #ce721d;
+}
