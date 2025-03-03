@@ -19,14 +19,14 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20 py-6 sm:py-10 lg:py-16">
             <!-- Tiêu đề -->
             <h1 class="text-2xl sm:text-3xl font-bold text_darkbrowndirt">Home</h1>
-            <p class="text-gray-600 mt-2 text-sm sm:text-base">
+            <p class="text-gray-600 my-3 text-sm sm:text-base">
                 Subheading that sets up context, shares more info about the website, or
                 generally gets people psyched to keep scrolling.
             </p>
-            <button
+            <a href="./contact.html"
                 class="mt-4 px-4 sm:px-6 py-2 text-sm sm:text-base bg_darkbrowndirt text-white rounded-md hover:bg_browndirt">
                 Contact Us
-            </button>
+            </a>
 
             <!-- Hình ảnh chính -->
             <div class="mt-4 sm:mt-6">
@@ -108,15 +108,9 @@
                             </p>
                         </div>
                     </div>
-                    <div class="mt-4 sm:mt-6 flex flex-col sm:flex-row gap-3">
-                        <button
-                            class="px-4 py-2 bg_darkbrowndirt text-white rounded-md hover:bg-orange-600 text-sm sm:text-base">
-                            Booking now
-                        </button>
-                        <button
-                            class="px-4 py-2 border border_darkbrowndirt text_darkbrowndirt rounded-md hover:bg-orange-100 text-sm sm:text-base">
-                            Contact Us
-                        </button>
+                    <div class="mt-4 sm:mt-6 flex flex-col sm:flex-row items-center gap-3">
+                        <div id="ctaBooking"></div>
+                        <div id="ctaContact"></div>
                     </div>
                 </div>
             </div>
@@ -398,7 +392,8 @@
             const html = await response.text();
             document.getElementById(id).innerHTML = html;
         }
-
+        loadComponent("ctaBooking", "../components/ctaBooking.html");
+        loadComponent("ctaContact", "../components/ctaContact.html");
         loadComponent("header", "../components/header.html");
         loadComponent("footer", "../components/footer.html");
     </script>
