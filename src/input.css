@@ -18,6 +18,7 @@
 
 .text_darkbrowndirt {
     color: #BC6C25;
+}
 
 .border_darkbrowndirt {
     border: solid 1px #BC6C25;
@@ -38,5 +39,5 @@
 }
 
 .nav-link:hover {
-    color: #2563eb;
+    color: #BC6C25;
 }
