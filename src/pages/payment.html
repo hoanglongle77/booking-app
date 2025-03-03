@@ -1,168 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout Page</title>
+    <link href="../output.css" rel="stylesheet" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Checkout Page</title>
-  <link href="../output.css" rel="stylesheet" />
-</head>
+  <body>
+    <div id="header-placeholder"></div>
+    <div class="bg-gray-100 p-4 md:p-10 flex justify-center">
+      <div class="max-w-4xl w-full bg-white p-6 md:p-10 rounded-lg shadow-lg">
+        <h1
+          class="text-2xl md:text-3xl font-bold text-orange-600 mb-4 md:mb-6 text-center md:text-left"
+        >
+          Check out
+        </h1>
 
-<body class="bg-gray-100 p-4 md:p-10 flex justify-center">
-  <div class="max-w-4xl w-full bg-white p-6 md:p-10 rounded-lg shadow-lg">
-    <h1 class="text-2xl md:text-3xl font-bold text-orange-600 mb-4 md:mb-6 text-center md:text-left">
-      Check out
-    </h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
+          <!-- Order Summary -->
+          <div class="bg-orange-100 p-4 md:p-6 rounded-lg">
+            <h2 class="text-lg font-semibold">Order Summary</h2>
+            <div class="border-b border-gray-300 my-3 md:my-4"></div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
-      <!-- Order Summary -->
-      <div class="bg-orange-100 p-4 md:p-6 rounded-lg">
-        <h2 class="text-lg font-semibold">Order Summary</h2>
-        <div class="border-b border-gray-300 my-3 md:my-4"></div>
+            <div class="text-sm text-gray-600 flex justify-between mt-2">
+              <span>Date: 27/02/2025</span>
+              <span>Time: 14:00 - 17:00</span>
+            </div>
 
-        <div class="text-sm text-gray-600 flex justify-between mt-2">
-          <span>Date: 27/02/2025</span>
-          <span>Time: 14:00 - 17:00</span>
-        </div>
+            <div class="border-b border-gray-300 my-3 md:my-4"></div>
 
-        <div class="border-b border-gray-300 my-3 md:my-4"></div>
+            <div class="w-full">
+              <!-- Mobile Layout (mặc định) -->
+              <div class="flex flex-col gap-2 sm:hidden">
+                <img
+                  src="https://files.oaiusercontent.com/file-EFuPLw3NN1xk5JiUaoRmT4?se=2025-02-27T08%3A18%3A34Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D2ce08279-5904-47ab-9dae-2dc5a319d0d0.webp&sig=MapCduG%2B/zgPqWYhh1s7QfxrtfXRNzBMJ09x08DjcGw%3D"
+                  alt="Space Image"
+                  class="w-full h-35 rounded-lg"
+                />
+                <div class="flex justify-between">
+                  <div class="">
+                    <h3 class="font-semibold text-lg">Space1</h3>
+                    <p class="text-sm text-gray-500">Description</p>
+                  </div>
+                  <div class="">
+                    <h3 class="font-semibold text-xl">$49.80</h3>
+                  </div>
+                </div>
+              </div>
 
-        <div class="w-full">
-          <!-- Mobile Layout (mặc định) -->
-          <div class="flex flex-col gap-2 sm:hidden">
-            <img
-              src="https://files.oaiusercontent.com/file-EFuPLw3NN1xk5JiUaoRmT4?se=2025-02-27T08%3A18%3A34Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D2ce08279-5904-47ab-9dae-2dc5a319d0d0.webp&sig=MapCduG%2B/zgPqWYhh1s7QfxrtfXRNzBMJ09x08DjcGw%3D"
-              alt="Space Image" class="w-full h-35 rounded-lg" />
+              <!-- Desktop Layout (mặc định) -->
+              <div class="hidden sm:flex items-center justify-between w-full">
+                <div class="flex items-center space-x-4">
+                  <img
+                    src="https://files.oaiusercontent.com/file-EFuPLw3NN1xk5JiUaoRmT4?se=2025-02-27T08%3A18%3A34Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D2ce08279-5904-47ab-9dae-2dc5a319d0d0.webp&sig=MapCduG%2B/zgPqWYhh1s7QfxrtfXRNzBMJ09x08DjcGw%3D"
+                    alt="Space Image"
+                    class="w-16 h-16 rounded-lg"
+                  />
+                  <div>
+                    <h3 class="font-semibold">Space1</h3>
+                    <p class="text-sm text-gray-500">Description</p>
+                  </div>
+                </div>
+                <div class="py-4">
+                  <h3 class="font-semibold">$49.80</h3>
+                  <p class="text-sm text-gray-500">3 hours</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="border-b border-gray-300 my-3 md:my-4"></div>
+
+            <div
+              class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3"
+            >
+              <input
+                type="text"
+                placeholder="Gift or discount code"
+                class="w-full sm:w-2/3 p-2 border rounded-lg"
+              />
+              <button
+                class="bg-gray-400 text-white px-4 py-2 rounded-lg w-full sm:w-auto"
+              >
+                Apply
+              </button>
+            </div>
+
+            <div class="border-b border-gray-300 my-3 md:my-4"></div>
+
+            <div class="text-sm text-gray-700 space-y-2">
+              <div class="flex justify-between">
+                <span>Subtotal (30% prepayment)</span>
+                <span>$49.80</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Taxes</span>
+                <span>$7.24</span>
+              </div>
+            </div>
+
+            <div class="border-b border-gray-300 my-3 md:my-4"></div>
+
             <div class="flex justify-between">
-              <div class="">
-                <h3 class="font-semibold text-lg">Space1</h3>
-                <p class="text-sm text-gray-500">Description</p>
-              </div>
-              <div class="">
-                <h3 class="font-semibold text-xl">$49.80</h3>
-              </div>
+              <div class="font-bold">Total:</div>
+              <span class="text-orange-600 text-xl font-bold">$59.28</span>
             </div>
           </div>
 
-          <!-- Desktop Layout (mặc định) -->
-          <div class="hidden sm:flex items-center justify-between w-full">
-            <div class="flex items-center space-x-4">
-              <img
-                src="https://files.oaiusercontent.com/file-EFuPLw3NN1xk5JiUaoRmT4?se=2025-02-27T08%3A18%3A34Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D2ce08279-5904-47ab-9dae-2dc5a319d0d0.webp&sig=MapCduG%2B/zgPqWYhh1s7QfxrtfXRNzBMJ09x08DjcGw%3D"
-                alt="Space Image" class="w-16 h-16 rounded-lg" />
-              <div>
-                <h3 class="font-semibold">Space1</h3>
-                <p class="text-sm text-gray-500">Description</p>
+          <!-- Payment Section -->
+          <div class="p-4 md:p-6">
+            <h3 class="text-lg font-semibold">Payment</h3>
+            <div class="border-t my-2"></div>
+
+            <p class="text-sm font-semibold mb-2">Pay With:</p>
+            <div class="flex flex-wrap gap-4">
+              <label class="flex items-center gap-2">
+                <input type="radio" name="payment" checked />
+                <span>Card</span>
+              </label>
+              <label class="flex items-center gap-2">
+                <input type="radio" name="payment" />
+                <span>Bank</span>
+              </label>
+              <label class="flex items-center gap-2">
+                <input type="radio" name="payment" />
+                <span>Transfer</span>
+              </label>
+            </div>
+            <form id="payment-form">
+              <div class="mt-4">
+                <label class="text-sm font-semibold">Card Number</label>
+                <input
+                  type="text"
+                  id="card-number"
+                  class="w-full p-2 border rounded-md text-sm mt-1 border-gray-300 focus:outline-none"
+                  placeholder="1234 5678 9101 1121"
+                  required
+                />
+                <p
+                  id="card-number-error"
+                  class="text-red-500 text-xs mt-1 hidden"
+                >
+                  Card number is required.
+                </p>
               </div>
-            </div>
-            <div class="py-4">
-              <h3 class="font-semibold">$49.80</h3>
-              <p class="text-sm text-gray-500">3 hours</p>
-            </div>
-          </div>
-        </div>
 
-        <div class="border-b border-gray-300 my-3 md:my-4"></div>
+              <div class="mt-4 flex flex-col sm:flex-row gap-4">
+                <div class="w-full sm:w-1/2">
+                  <label class="text-sm font-semibold">Expiration Date</label>
+                  <input
+                    type="text"
+                    id="exp-date"
+                    class="w-full p-2 border rounded-md text-sm mt-1 border-gray-300 focus:outline-none"
+                    placeholder="MM/YY"
+                    required
+                  />
+                  <p
+                    id="exp-date-error"
+                    class="text-red-500 text-xs mt-1 hidden"
+                  >
+                    Expiration date is required.
+                  </p>
+                </div>
+                <div class="w-full sm:w-1/2">
+                  <label class="text-sm font-semibold">CVV</label>
+                  <input
+                    type="text"
+                    id="cvv"
+                    class="w-full p-2 border rounded-md text-sm mt-1 border-gray-300 focus:outline-none"
+                    placeholder="123"
+                    required
+                  />
+                  <p id="cvv-error" class="text-red-500 text-xs mt-1 hidden">
+                    CVV is required.
+                  </p>
+                </div>
+              </div>
+              <div class="mt-4 flex items-center gap-2">
+                <input
+                  type="checkbox"
+                  title="Save card"
+                  placeholder="save-card"
+                  id="save-card"
+                />
+                <span class="text-sm">Save card details</span>
+              </div>
 
-        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
-          <input type="text" placeholder="Gift or discount code" class="w-full sm:w-2/3 p-2 border rounded-lg" />
-          <button class="bg-gray-400 text-white px-4 py-2 rounded-lg w-full sm:w-auto">
-            Apply
-          </button>
-        </div>
+              <button
+                type="submit"
+                class="mt-4 bg-orange-700 text-white w-full py-3 rounded-lg font-bold"
+              >
+                Pay USD$59.28
+              </button>
+            </form>
 
-        <div class="border-b border-gray-300 my-3 md:my-4"></div>
-
-        <div class="text-sm text-gray-700 space-y-2">
-          <div class="flex justify-between">
-            <span>Subtotal (30% prepayment)</span>
-            <span>$49.80</span>
-          </div>
-          <div class="flex justify-between">
-            <span>Taxes</span>
-            <span>$7.24</span>
-          </div>
-        </div>
-
-        <div class="border-b border-gray-300 my-3 md:my-4"></div>
-
-        <div class="flex justify-between">
-          <div class="font-bold">Total:</div>
-          <span class="text-orange-600 text-xl font-bold">$59.28</span>
-        </div>
-      </div>
-
-      <!-- Payment Section -->
-      <div class="p-4 md:p-6">
-        <h3 class="text-lg font-semibold">Payment</h3>
-        <div class="border-t my-2"></div>
-
-        <p class="text-sm font-semibold mb-2">Pay With:</p>
-        <div class="flex flex-wrap gap-4">
-          <label class="flex items-center gap-2">
-            <input type="radio" name="payment" checked />
-            <span>Card</span>
-          </label>
-          <label class="flex items-center gap-2">
-            <input type="radio" name="payment" />
-            <span>Bank</span>
-          </label>
-          <label class="flex items-center gap-2">
-            <input type="radio" name="payment" />
-            <span>Transfer</span>
-          </label>
-        </div>
-        <form id="payment-form">
-          <div class="mt-4">
-            <label class="text-sm font-semibold">Card Number</label>
-            <input type="text" id="card-number"
-              class="w-full p-2 border rounded-md text-sm mt-1 border-gray-300 focus:outline-none"
-              placeholder="1234 5678 9101 1121" required />
-            <p id="card-number-error" class="text-red-500 text-xs mt-1 hidden">
-              Card number is required.
+            <p class="text-xs text-gray-500 mt-2 text-center sm:text-left">
+              Your personal data will be used to process your order, support
+              your experience throughout this website, and for other purposes
+              described in our privacy policy.
             </p>
           </div>
-
-          <div class="mt-4 flex flex-col sm:flex-row gap-4">
-            <div class="w-full sm:w-1/2">
-              <label class="text-sm font-semibold">Expiration Date</label>
-              <input type="text" id="exp-date"
-                class="w-full p-2 border rounded-md text-sm mt-1 border-gray-300 focus:outline-none" placeholder="MM/YY"
-                required />
-              <p id="exp-date-error" class="text-red-500 text-xs mt-1 hidden">
-                Expiration date is required.
-              </p>
-            </div>
-            <div class="w-full sm:w-1/2">
-              <label class="text-sm font-semibold">CVV</label>
-              <input type="text" id="cvv"
-                class="w-full p-2 border rounded-md text-sm mt-1 border-gray-300 focus:outline-none" placeholder="123"
-                required />
-              <p id="cvv-error" class="text-red-500 text-xs mt-1 hidden">
-                CVV is required.
-              </p>
-            </div>
-          </div>
-          <div class="mt-4 flex items-center gap-2">
-            <input type="checkbox" title="Save card" placeholder="save-card" id="save-card" />
-            <span class="text-sm">Save card details</span>
-          </div>
-
-          <button type="submit" class="mt-4 bg-orange-700 text-white w-full py-3 rounded-lg font-bold">
-            Pay USD$59.28
-          </button>
-        </form>
-
-        <p class="text-xs text-gray-500 mt-2 text-center sm:text-left">
-          Your personal data will be used to process your order, support your
-          experience throughout this website, and for other purposes described
-          in our privacy policy.
-        </p>
+        </div>
       </div>
     </div>
-  </div>
-</body>
-
+    <div id="footer-placeholder"></div>
+  </body>
 </html>
 <script>
   document
@@ -185,3 +227,4 @@
       window.location.href = "./payment-successfull.html";
     });
 </script>
+<script src="../js/main.js"></script>

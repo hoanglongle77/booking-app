@@ -1,43 +1,57 @@
 @import "tailwindcss";
 
 .font-inter {
-    font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .bg_browndirt {
-    background-color: #DDA15E;
+  background-color: #dda15e;
 }
 
 .text_browndirt {
-    color: #DDA15E;
+  color: #dda15e;
 }
 
 .bg_darkbrowndirt {
-    background-color: #BC6C25;
+  background-color: #bc6c25;
 }
 
 .text_darkbrowndirt {
-    color: #BC6C25;
+  color: #bc6c25;
 }
 
 .border_darkbrowndirt {
-    border: solid 1px #BC6C25;
+  border: solid 1px #bc6c25;
 }
 
 .text_darkbrowndirt {
-    color: #BC6C25;
+  color: #bc6c25;
 }
 
 .bg_darkbrowndirt:hover {
-    background-color: #924e13;
-    transition: 0.5s;
+  background-color: #924e13;
+  transition: 0.5s;
 }
 
 .nav-link {
-    color: #4a5568;
-    transition: color 0.3s ease-in-out;
+  color: #4a5568;
+  transition: color 0.3s ease-in-out;
 }
 
 .nav-link:hover {
-    color: #BC6C25;
+  color: #bc6c25;
+}
+.divider {
+  width: calc(100% - 200px); /* Cách lề trái & phải 100px */
+  max-width: 1200px;
+  height: 1px;
+  background-color: #ddd;
+  margin: 24px auto;
+}
+
+/* Khi màn hình nhỏ hơn 768px (tablet, mobile) */
+@media (max-width: 768px) {
+  .divider {
+    width: calc(100% - 40px); /* Cách lề 20px mỗi bên */
+  }
 }
