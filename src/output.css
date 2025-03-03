@@ -582,9 +582,6 @@
   .min-h-screen {
     min-height: 100vh;
   }
-  .w-1 {
-    width: calc(var(--spacing) * 1);
-  }
   .w-1\/2 {
     width: calc(1/2 * 100%);
   }
@@ -2520,11 +2517,6 @@
   .xl\:mx-0 {
     @media (width >= 80rem) {
       margin-inline: calc(var(--spacing) * 0);
-    }
-  }
-  .xl\:mx-2 {
-    @media (width >= 80rem) {
-      margin-inline: calc(var(--spacing) * 2);
     }
   }
   .xl\:mx-3 {
