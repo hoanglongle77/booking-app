@@ -38,7 +38,7 @@
         <form id="booking-form" class="bg_browndirt p-6 rounded-lg flex-1">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
             <div>
-              <label class="block mb-2" for="first-name"> First name </label>
+              <label class="block mb-2" for="first-name"> First name<b>*</b> </label>
               <input
                 class="w-full bg-white p-2 border border-gray-300 rounded"
                 id="first-name"
@@ -48,7 +48,7 @@
               />
             </div>
             <div>
-              <label class="block mb-2" for="last-name"> Last name </label>
+              <label class="block mb-2" for="last-name"> Last name<b>*</b> </label>
               <input
                 class="w-full bg-white p-2 border border-gray-300 rounded"
                 id="last-name"
@@ -59,7 +59,7 @@
             </div>
           </div>
           <div class="mb-4">
-            <label class="block mb-2" for="email"> Email address </label>
+            <label class="block mb-2" for="email"> Email address<b>*</b> </label>
             <input
               class="w-full bg-white p-2 border border-gray-300 rounded"
               id="email"
@@ -69,7 +69,7 @@
             />
           </div>
           <div class="mb-4">
-            <label class="block mb-2" for="phone"> Phone number </label>
+            <label class="block mb-2" for="phone"> Phone number<b>*</b> </label>
             <input
               class="w-full bg-white p-2 border border-gray-300 rounded"
               id="phone"
@@ -79,7 +79,7 @@
             />
           </div>
           <div class="mb-4">
-            <label class="block mb-2" for="table"> Space </label>
+            <label class="block mb-2" for="table"> Space<b>*</b> </label>
             <select
               class="w-full bg-white p-2 border border-gray-300 rounded"
               id="space"
@@ -92,31 +92,29 @@
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
             <div>
               <label class="block mb-2" for="checkin-time">
-                Checkin time
+                Checkin time<b>*</b>
               </label>
               <input
                 class="w-full bg-white p-2 border border-gray-300 rounded"
                 id="checkin-time"
                 type="time"
-                placeholder="14:00"
                 required
               />
             </div>
             <div>
               <label class="block mb-2" for="checkout-time">
-                Checkout time
+                Checkout time<b>*</b>
               </label>
               <input
                 class="w-full bg-white p-2 border border-gray-300 rounded"
                 id="checkout-time"
                 type="time"
-                placeholder="17:00"
                 required
               />
             </div>
             <div>
               <label class="block mb-2" for="checkin-date">
-                Checkin date
+                Checkin date<b>*</b>
               </label>
               <input
                 class="w-full bg-white p-2 border border-gray-300 rounded"
@@ -130,8 +128,7 @@
           <button
             id="confirm-btn"
             class="bg_darkbrowndirt text-white px-4 py-2 rounded w-full hover:bg_darkbrowndirt"
-            type="submit"
-          >
+            type="submit">
             Confirm
           </button>
         </form>
@@ -210,6 +207,7 @@
 
     <p id="error-message" class="text-red-500 mt-2"></p>
 
+    <script src="../js/time.js"></script>
     <script type="module" src="../js/booking.js"></script>
     <script>
       document
