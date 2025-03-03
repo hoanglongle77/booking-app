@@ -1,115 +1,80 @@
 import { db, ref, set, get } from "../config/firebase.js";
 import { v4 as uuidv4 } from "https://cdn.jsdelivr.net/npm/uuid@9.0.1/+esm";
 
-const spacesRef = ref(db, "spaces");
-
-export async function createSpace(type, description, seats = {}) {
-  const spaceId = uuidv4();
-  const spaceRef = ref(db, `spaces/${spaceId}`);
-  const newSpace = { type, description, seats };
-
+export async function getCategories() {
   try {
-    await set(spaceRef, newSpace);
-    console.log("Space added successfully!");
+    const categoriesRef = ref(db, "categories");
+    const snapshot = await get(categoriesRef);
+    return snapshot.exists() ? snapshot.val() : {};
   } catch (error) {
-    console.error("Error adding space:", error);
+    console.error("Lỗi khi lấy categories:", error);
+    return {};
   }
 }
 
-export async function getSpaces() {
+// Lấy danh sách Spaces theo Category ID
+export async function getSpaces(categoryId) {
   try {
+    const spacesRef = ref(db, `categories/${categoryId}/spaces`);
     const snapshot = await get(spacesRef);
     return snapshot.exists() ? snapshot.val() : {};
   } catch (error) {
-    console.error("Error fetching spaces:", error);
+    console.error(`Lỗi khi lấy spaces của category ${categoryId}:`, error);
+    return {};
   }
 }
-export async function getAllSeat() {
+
+// Lấy Space theo ID trong Category
+export async function getSpaceById(categoryId, spaceId) {
   try {
-    const spacesRef = ref(db, "spaces");
-    const snapshot = await get(spacesRef);
-
-    if (!snapshot.exists()) {
-      console.log("Không có dữ liệu chỗ ngồi!");
-      return [];
-    }
-
-    const spaces = snapshot.val();
-    let seats = [];
-
-    Object.keys(spaces).forEach((spaceId) => {
-      const space = spaces[spaceId];
-      if (space.seats) {
-        Object.keys(space.seats).forEach((seatId) => {
-          seats.push({
-            id: seatId,
-            spaceId: spaceId,
-            ...space.seats[seatId],
-          });
-        });
-      }
-    });
-
-    return seats;
-  } catch (error) {
-    console.error("Lỗi khi lấy tất cả chỗ ngồi:", error);
-    return [];
-  }
-}
-export async function getSeatBySpace(spaceId) {
-  try {
-    
-    const spaceRef = ref(db, `spaces/${spaceId}/seats`);
+    const spaceRef = ref(db, `categories/${categoryId}/spaces/${spaceId}`);
     const snapshot = await get(spaceRef);
+    return snapshot.exists() ? snapshot.val() : null;
+  } catch (error) {
+    console.error(`Lỗi khi lấy space ${spaceId} trong category ${categoryId}:`, error);
+    return null;
+  }
+}
+
+// Lấy danh sách Seat trong một Space
+export async function getSeatBySpace(categoryId, spaceId) {
+  try {
+    const seatsRef = ref(db, `categories/${categoryId}/spaces/${spaceId}/seats`);
+    const snapshot = await get(seatsRef);
 
     if (!snapshot.exists()) {
-      console.log(`Không có dữ liệu chỗ ngồi cho spaceId: ${spaceId}`);
+      console.log(`Không có ghế trong space ${spaceId}`);
       return [];
     }
 
     const seats = snapshot.val();
     return Object.keys(seats).map((seatId) => ({
       id: seatId,
-      spaceId: spaceId,
       ...seats[seatId],
     }));
   } catch (error) {
-    console.error(`Lỗi khi lấy chỗ ngồi của spaceId: ${spaceId}`, error);
+    console.error(`Lỗi khi lấy ghế của space ${spaceId}:`, error);
     return [];
   }
 }
-export async function getSeatById(spaceId, seatId) {
+
+// Lấy thông tin Seat theo ID
+export async function getSeatById(categoryId, spaceId, seatId) {
   try {
-    console.log(`${spaceId}, ${seatId}`);
-    const seatRef = ref(db, `spaces/${spaceId}/seats/${seatId}`);
+    const seatRef = ref(db, `categories/${categoryId}/spaces/${spaceId}/seats/${seatId}`);
     const snapshot = await get(seatRef);
 
     if (!snapshot.exists()) {
-      console.log(
-        `Không tìm thấy ghế có ID: ${seatId} trong không gian ${spaceId}`
-      );
+      console.log(`Không tìm thấy seat ${seatId} trong space ${spaceId}`);
       return null;
     }
 
     return {
       id: seatId,
-      spaceId: spaceId,
       ...snapshot.val(),
     };
   } catch (error) {
-    console.error(
-      `Lỗi khi lấy ghế ${seatId} trong không gian ${spaceId}:`,
-      error
-    );
+    console.error(`Lỗi khi lấy seat ${seatId} trong space ${spaceId}:`, error);
     return null;
-  }
-}
-
-export async function getSpaceById(spaceId) {
-  try {
-    const snapshot = await get(ref(db, `spaces/${spaceId}`));
-    return snapshot.exists() ? snapshot.val() : null;
-  } catch (error) {
-    console.error("Error fetching space:", error);
   }
 }

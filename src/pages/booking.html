@@ -42,11 +42,11 @@
             required />
         </div>
         <div class="mb-4">
-          <label class="block mb-2" for="table"> Space<b>*</b> </label>
-          <select class="w-full bg-white p-2 border border-gray-300 rounded" id="space" required>
-            <option value="">Choose a space</option>
+          <label class="block mb-2" for="table"> Category<b>*</b> </label>
+          <select class="w-full bg-white p-2 border border-gray-300 rounded" id="category" required>
+            <option value="">Choose a category</option>
           </select>
-          <div id="seat"></div>
+          <div id="space"></div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
           <div>
@@ -106,7 +106,7 @@
         const lastName = document.getElementById("last-name").value.trim();
         const email = document.getElementById("email").value.trim();
         const phone = document.getElementById("phone").value.trim();
-        const space = document.getElementById("space").value;
+        const category = document.getElementById("category").value;
         const checkinDate = document.getElementById("checkin-date").value;
         const checkinTime = document.getElementById("checkin-time").value;
         const checkoutTime = document.getElementById("checkout-time").value;
@@ -116,7 +116,7 @@
           !lastName ||
           !email ||
           !phone ||
-          !space ||
+          !category ||
           !checkinDate ||
           !checkinTime ||
           !checkoutTime
@@ -130,7 +130,7 @@
           lastName,
           email,
           phone,
-          space,
+          category,
           checkinDate,
           checkinTime,
           checkoutTime,
