@@ -1032,13 +1032,6 @@
       margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)));
     }
   }
-  .space-y-4 {
-    :where(& > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
-    }
-  }
   .space-y-reverse {
     :where(& > :not(:last-child)) {
       --tw-space-y-reverse: 1;
@@ -1588,10 +1581,6 @@
   .text-2xl {
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
-  }
-  .text-3xl {
-    font-size: var(--text-3xl);
-    line-height: var(--tw-leading, var(--text-3xl--line-height));
   }
   .text-4xl {
     font-size: var(--text-4xl);
@@ -2509,11 +2498,6 @@
       padding-inline: calc(var(--spacing) * 20);
     }
   }
-  .lg\:py-16 {
-    @media (width >= 64rem) {
-      padding-block: calc(var(--spacing) * 16);
-    }
-  }
   .xl\:mx-0 {
     @media (width >= 80rem) {
       margin-inline: calc(var(--spacing) * 0);
@@ -2562,25 +2546,25 @@
   }
 }
 .font-inter {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 .bg_browndirt {
-  background-color: #DDA15E;
+  background-color: #dda15e;
 }
 .text_browndirt {
-  color: #DDA15E;
+  color: #dda15e;
 }
 .bg_darkbrowndirt {
-  background-color: #BC6C25;
+  background-color: #bc6c25;
 }
 .text_darkbrowndirt {
-  color: #BC6C25;
+  color: #bc6c25;
 }
 .border_darkbrowndirt {
-  border: solid 1px #BC6C25;
+  border: solid 1px #bc6c25;
 }
 .text_darkbrowndirt {
-  color: #BC6C25;
+  color: #bc6c25;
 }
 .bg_darkbrowndirt:hover {
   background-color: #924e13;
@@ -2591,7 +2575,19 @@
   transition: color 0.3s ease-in-out;
 }
 .nav-link:hover {
-  color: #BC6C25;
+  color: #bc6c25;
+}
+.divider {
+  width: calc(100% - 200px);
+  max-width: 1200px;
+  height: 1px;
+  background-color: #ddd;
+  margin: 24px auto;
+}
+@media (max-width: 768px) {
+  .divider {
+    width: calc(100% - 40px);
+  }
 }
 @property --tw-translate-x {
   syntax: "*";
