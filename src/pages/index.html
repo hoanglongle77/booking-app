@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/css/splide.min.css" />
     <link href="../input.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/js/splide.min.js"></script>
@@ -14,19 +15,18 @@
 
 <body class="bg-gray-100">
     <div id="header"></div>
-
     <main>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20 py-6 sm:py-10 lg:py-16">
             <!-- Tiêu đề -->
             <h1 class="text-2xl sm:text-3xl font-bold text_darkbrowndirt">Home</h1>
-            <p class="text-gray-600 mt-2 text-sm sm:text-base">
+            <p class="text-gray-600 my-3 text-sm sm:text-base">
                 Subheading that sets up context, shares more info about the website, or
                 generally gets people psyched to keep scrolling.
             </p>
-            <button
+            <a href="./contact.html"
                 class="mt-4 px-4 sm:px-6 py-2 text-sm sm:text-base bg_darkbrowndirt text-white rounded-md hover:bg_browndirt">
                 Contact Us
-            </button>
+            </a>
 
             <!-- Hình ảnh chính -->
             <div class="mt-4 sm:mt-6">
@@ -52,8 +52,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Danh sách các không gian -->
             <h2 class="mt-8 text-xl sm:text-2xl font-semibold text_darkbrowndirt">
                 Our space options
             </h2>
@@ -110,15 +108,9 @@
                             </p>
                         </div>
                     </div>
-                    <div class="mt-4 sm:mt-6 flex flex-col sm:flex-row gap-3">
-                        <button
-                            class="px-4 py-2 bg_darkbrowndirt text-white rounded-md hover:bg-orange-600 text-sm sm:text-base">
-                            Booking now
-                        </button>
-                        <button
-                            class="px-4 py-2 border border_darkbrowndirt text_darkbrowndirt rounded-md hover:bg-orange-100 text-sm sm:text-base">
-                            Contact Us
-                        </button>
+                    <div class="mt-4 sm:mt-6 flex flex-col sm:flex-row items-center gap-3">
+                        <div id="ctaBooking"></div>
+                        <div id="ctaContact"></div>
                     </div>
                 </div>
             </div>
@@ -184,7 +176,6 @@
         </div>
     </main>
     <div id="cta-placeholder"></div>
-
     <div id="footer"></div>
 
     <script>
@@ -402,7 +393,8 @@
             const html = await response.text();
             document.getElementById(id).innerHTML = html;
         }
-
+        loadComponent("ctaBooking", "../components/ctaBooking.html");
+        loadComponent("ctaContact", "../components/ctaContact.html");
         loadComponent("header", "../components/header.html");
         loadComponent("footer", "../components/footer.html");
         loadComponent("cta-placeholder","../components/cta.html");
