@@ -9,9 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   roomLocation = data.roomLocation;
   roomDescription = data.roomDescription;
   if (newBooking) {
-    document.getElementById(
-        "name"
-      ).textContent = userName;
+    document.getElementById("name").textContent = userName;
     document.getElementById(
       "price"
     ).textContent = `${newBooking.totalAmount} VND`;
@@ -25,4 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("location").textContent = roomLocation;
     document.getElementById("description").textContent = roomDescription;
   }
+});
+document.addEventListener("click", () => {
+  window.location.href = "payment.html";
 });

@@ -13,6 +13,10 @@ export async function createBooking(
 ) {
   const bookingId = uuidv4();
   const bookingRef = ref(db, `bookings/${bookingId}`);
+  if (!userId || !roomId || !date || !timeStart || !timeEnd || !totalAmount) {
+    alert("missinging item");
+    return { status: "ERROR" };
+  }
   const newBooking = {
     userId,
     roomId,

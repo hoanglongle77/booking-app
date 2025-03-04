@@ -77,7 +77,6 @@ const makeBooking = async (
   email,
   phone,
   price,
-  spaceId,
   checkinDate,
   checkinTime,
   checkoutTime
@@ -92,13 +91,21 @@ const makeBooking = async (
       alert("Không tạo được user " + userCreating.message);
       return;
     }
-    const roomId = spaceId;
+    const roomId = selectedSpaceId;
+    const userId = userCreating.userId;
+    const date = checkinDate;
+    const timeStart = checkinTime;
+    const timeEnd = checkoutTime;
+    console.log(`room id: ${roomId}`);
+    if (!roomId) {
+      alert("roomid not found " + roomId);
+    }
     const bookingCreating = await createBooking(
-      userCreating.userId,
+      userId,
       roomId,
-      checkinDate,
-      checkinTime,
-      checkoutTime,
+      date,
+      timeStart,
+      timeEnd,
       totalAmount
     );
 
