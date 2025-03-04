@@ -177,6 +177,7 @@
             </div>
         </div>
     </main>
+    <div id="cta-placeholder"></div>
     <div id="footer-placeholder"></div>
 
     <script>
@@ -394,8 +395,7 @@
             const html = await response.text();
             document.getElementById(id).innerHTML = html;
         }
-        loadComponent("ctaBooking", "../components/ctaBooking.html");
-        loadComponent("ctaContact", "../components/ctaContact.html");
+        loadComponent("cta-placeholder", "../components/cta.html");
         loadComponent("header", "../components/header.html");
         loadComponent("footer", "../components/footer.html");
     </script>

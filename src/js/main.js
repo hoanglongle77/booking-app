@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   loadComponent("footer-placeholder", "../components/footer.html");
+  loadComponent("cta-placeholder", "../components/cta.html");
 
   function initHeader() {
     console.log("✅ Header loaded!");
@@ -55,5 +56,4 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-  loadComponent("cta-placeholder", "../components/cta.html");
 });
