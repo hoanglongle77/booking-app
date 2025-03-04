@@ -1,60 +1,89 @@
 @import "tailwindcss";
 
 .font-inter {
-    font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .bg_browndirt {
-    background-color: #DDA15E;
+  background-color: #dda15e;
 }
 
 .text_browndirt {
-    color: #DDA15E;
+  color: #dda15e;
 }
 
 .bg_darkbrowndirt {
-    background-color: #BC6C25;
+  background-color: #bc6c25;
 }
 
 .text_darkbrowndirt {
-    color: #BC6C25;
+  color: #bc6c25;
 }
 
 .border_darkbrowndirt {
-    border: solid 1px #BC6C25;
+  border: solid 1px #bc6c25;
 }
 
 .text_darkbrowndirt {
-    color: #BC6C25;
+  color: #bc6c25;
 }
 
 .bg_darkbrowndirt:hover {
-    background-color: #924e13;
-    transition: 0.5s;
+  background-color: #924e13;
+  transition: 0.5s;
 }
 
 .nav-link {
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
 }
 
 .nav-link:hover {
-    color: #2563eb;
+  color: #bc6c25;
+}
+.divider {
+  width: calc(100% - 200px); /* Cách lề trái & phải 100px */
+  max-width: 1200px;
+  height: 1px;
+  background-color: #ddd;
+  margin: 24px auto;
 }
 
-.booking-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #ce721d;
-    color: white;
-    padding: 15px 25px;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+/* Khi màn hình nhỏ hơn 768px (tablet, mobile) */
+@media (max-width: 768px) {
+  .divider {
+    width: calc(100% - 40px); /* Cách lề 20px mỗi bên */
+  }
 }
-.booking-button:hover {
-    background-color: #ce721d;
+
+/* ---------------shake---------------- */
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.shake {
+  animation: shake 0.3s ease-in-out;
+}
+
+.border-red-500 {
+  border: 2px solid red !important;
+}
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
 }

@@ -3,45 +3,130 @@
     "c6bc03de-7749-4634-ba67-eadd981ac611": {
       "name": "Nguyen Van A",
       "email": "nguyenvana@example.com",
+      "password": "123456",
       "phone": "0987654321",
       "role": "customer"
     },
     "128108a2-2222-47e5-9cf0-89ddcea1ca88": {
       "name": "Tran Thi B",
       "email": "tranthib@example.com",
+      "password": "123456",
       "phone": "0978123456",
       "role": "customer"
     },
     "a65e44ba-1b8b-4b1e-9391-c69979a79e86": {
       "name": "Admin",
       "email": "admin@example.com",
+      "password": "123456",
       "phone": "0900123456",
       "role": "admin"
     }
   },
-  "spaces": {
+  "categories": {
     "d7e330f7-1fe7-4cba-af12-cc4c88a7126b": {
-      "type": "single",
+      "name": "single",
       "description": "A single-seat booking provides a private and quiet space for individuals who need focus and concentration.",
-      "seats": {
+      "spaces": {
         "3dcf54d6-0c3c-4a62-b783-b2744e5531e9": {
-          "name": "Seat A1",
+          "name": "Space A1",
           "price_per_hour": 50000,
+          "description": "A warm and inviting space for reading, relaxing, and creative focus.",
           "status": "available",
-          "imageUrls": ["../assets/img/meeting_8.jpg"],
+          "imageUrl": ["../assets/img/1.png"],
+          "location": "Tầng 1, khu A"
+        },
+        "3dcf54d6-0c3c-4a62-b783-b2744e5531a9": {
+          "name": "Space A1",
+          "price_per_hour": 50000,
+          "description": "A warm and inviting space for reading, relaxing, and creative focus.",
+          "status": "available",
+          "imageUrl": ["../assets/img/2.png"],
+          "location": "Tầng 1, khu A"
+        },
+        "3dcf54d6-0c3c-4a62-b783-b2744e5531s9": {
+          "name": "Space A1",
+          "price_per_hour": 50000,
+          "description": "A warm and inviting space for reading, relaxing, and creative focus.",
+          "status": "available",
+          "imageUrl": ["../assets/img/3.png"],
+          "location": "Tầng 1, khu A"
+        },
+        "3dcf54d6-0c3c-4a62-a783-b2744e5531e9": {
+          "name": "Space A1",
+          "price_per_hour": 50000,
+          "description": "A warm and inviting space for reading, relaxing, and creative focus.",
+          "status": "available",
+          "imageUrl": ["../assets/img/4.png"],
+          "location": "Tầng 1, khu A"
+        },
+        "3dcf54d6-0c3c-4a62-b783-b2a44e5531e9": {
+          "name": "Space A1",
+          "price_per_hour": 50000,
+          "description": "A warm and inviting space for reading, relaxing, and creative focus.",
+          "status": "available",
+          "imageUrl": ["../assets/img/1.png"],
+          "location": "Tầng 1, khu A"
+        },
+        "3dcf54d6-0c3c-4a62-b783-b2744e5a31e9": {
+          "name": "Space A1",
+          "price_per_hour": 50000,
+          "description": "A warm and inviting space for reading, relaxing, and creative focus.",
+          "status": "available",
+          "imageUrl": ["../assets/img/2.png"],
+          "location": "Tầng 1, khu A"
+        },
+        "3dcf54d6-0c3c-4a62-b783-b2744ed531e9": {
+          "name": "Space A1",
+          "price_per_hour": 50000,
+          "description": "A warm and inviting space for reading, relaxing, and creative focus.",
+          "status": "available",
+          "imageUrl": ["../assets/img/3.png"],
+          "location": "Tầng 1, khu A"
+        },
+        "3dcf54d6-0c3c-4a62-b783-b2744ea31e9": {
+          "name": "Space A1",
+          "price_per_hour": 50000,
+          "description": "A warm and inviting space for reading, relaxing, and creative focus.",
+          "status": "available",
+          "imageUrl": ["../assets/img/4.png"],
           "location": "Tầng 1, khu A"
         }
       }
     },
     "e73e6a34-3bf9-43b8-8504-f77dd5e9c0d0": {
-      "type": "group",
+      "name": "group",
       "description": "A group-seat booking is designed for teams and collaborative work.",
-      "seats": {
-        "c8d82d33-fb4c-4668-99da-001a9a148465": {
-          "name": "Seat B1",
+      "spaces": {
+        "c8d82d33-fb4c-4668-99da-001a0a148465": {
+          "name": "Space B1",
           "price_per_hour": 200000,
+          "description": "A warm and inviting space for reading, relaxing, and creative focus.",
           "status": "available",
-          "imageUrls": ["../assets/img/meeting_6.jpg"],
+          "imageUrl": ["../assets/img/1.png"],
+          "location": "Tầng 2, khu B"
+        },
+        "c8d82d33-fb4c-4668-99da-001a9a148465": {
+          "name": "Space B1",
+          "price_per_hour": 200000,
+          "description": "A warm and inviting space for reading, relaxing, and creative focus.",
+          "status": "available",
+          "imageUrl": ["../assets/img/2.png"],
+          "location": "Tầng 2, khu B"
+        },
+        "c8d82d33-fb4c-4664-99da-001a9a148465": {
+          "name": "Space B1",
+          "price_per_hour": 200000,
+          "description": "A warm and inviting space for reading, relaxing, and creative focus.",
+          "status": "available",
+          "imageUrl": ["../assets/img/3.png"],
+          "location": "Tầng 2, khu B"
+        },
+        "c8d82d33-fb4c-4668-96da-001a9a148465": {
+          "name": "Space B1",
+          "price_per_hour": 200000,
+          "description": "A warm and inviting space for reading, relaxing, and creative focus.",
+          "status": "available",
+          "imageUrl": ["../assets/img/4.png"],
           "location": "Tầng 2, khu B"
         }
       }
@@ -50,21 +135,18 @@
   "bookings": {
     "6fa459ea-ee8a-3ca4-894e-db77e160355e": {
       "userId": "c6bc03de-7749-4634-ba67-eadd981ac611",
-      "seatId": "3dcf54d6-0c3c-4a62-b783-b2744e5531e9",
+      "roomId": "3dcf54d6-0c3c-4a62-b783-b2744e5531e9",
       "date": "2025-03-01",
       "timeStart": "09:00",
       "timeEnd": "12:00",
       "status": "confirmed",
-      "totalAmount": 100.0,
-      "paidAmount": 30.0,
-      "remainingAmount": 70.0
+      "totalAmount": 100.0
     }
   },
   "payments": {
     "550e8400-e29b-41d4-a716-446655440000": {
       "bookingId": "6fa459ea-ee8a-3ca4-894e-db77e160355e",
-      "amount": 30.0,
-      "currency": "USD",
+      "amount": 100.0,
       "paymentMethod": "Credit Card",
       "paymentStatus": "paid",
       "paymentType": "deposit",
