@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
   loadComponent("cta-placeholder", "../components/cta.html");
 
   function initHeader() {
-    console.log("✅ Header loaded!");
 
     // Lấy các phần tử của menu
     const menuBtn = document.getElementById("menu-btn");
@@ -34,13 +33,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Mở menu
     menuBtn.addEventListener("click", function () {
-      console.log("🔹 Menu mở!");
       menu.classList.remove("translate-x-full"); // Hiện menu từ phải
     });
 
     // Đóng menu
     closeMenuBtn.addEventListener("click", function () {
-      console.log("🔹 Menu đóng!");
       menu.classList.add("translate-x-full"); // Ẩn menu
     });
 
@@ -51,7 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
         e.target !== menuBtn &&
         !menuBtn.contains(e.target)
       ) {
-        console.log("🔹 Click ra ngoài, đóng menu...");
         menu.classList.add("translate-x-full");
       }
     });

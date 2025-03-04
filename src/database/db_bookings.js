@@ -32,7 +32,7 @@ export async function createBooking(
   try {
     await set(bookingRef, newBooking);
     console.log("Booking added successfully!");
-    return { status: "OK", newBooking };
+    return { status: "OK", newBooking, bookingId };
   } catch (error) {
     console.error("Error adding booking:", error);
     return { status: "ERROR" };
