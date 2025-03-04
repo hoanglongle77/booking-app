@@ -1,151 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking Page</title>
+    <link href="../output.css" rel="stylesheet" />
+    <link href="../input.css" rel="stylesheet" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Booking Page</title>
-  <link href="../output.css" rel="stylesheet" />
-  <link href="../input.css" rel="stylesheet" />
-</head>
+  <body>
+    <div id="header-placeholder"></div>
 
-<body>
-  <div id="header-placeholder"></div>
+    <div class="max-w-6xl mx-auto p-6">
+      <h1 class="font-inter text-4xl font-bold text_darkbrowndirt mb-10 mt-10">
+        Booking space page
+      </h1>
 
-  <div class="max-w-6xl mx-auto px-6">
-    <h1 class="font-inter text-3xl font-bold text_darkbrowndirt mb-10">
-      Booking space page
-    </h1>
+      <div class="flex flex-col md:flex-row gap-6 mb-9">
+        <form id="booking-form" class="bg_browndirt p-6 rounded-lg flex-1">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <label class="block mb-2" for="first-name">
+                First name<b>*</b>
+              </label>
+              <input
+                class="w-full bg-white p-2 border border-gray-300 rounded"
+                id="first-name"
+                type="text"
+                placeholder="Jane"
+                required
+              />
+            </div>
+            <div>
+              <label class="block mb-2" for="last-name">
+                Last name<b>*</b>
+              </label>
+              <input
+                class="w-full bg-white p-2 border border-gray-300 rounded"
+                id="last-name"
+                type="text"
+                placeholder="Smitherton"
+                required
+              />
+            </div>
+          </div>
+          <div class="mb-4">
+            <label class="block mb-2" for="email">
+              Email address<b>*</b>
+            </label>
+            <input
+              class="w-full bg-white p-2 border border-gray-300 rounded"
+              id="email"
+              type="email"
+              placeholder="email@janesfakedomain.net"
+              required
+            />
+          </div>
+          <div class="mb-4">
+            <label class="block mb-2" for="phone"> Phone number<b>*</b> </label>
+            <input
+              class="w-full bg-white p-2 border border-gray-300 rounded"
+              id="phone"
+              type="tel"
+              placeholder="+84"
+              required
+            />
+          </div>
+          <div class="mb-4">
+            <label class="block mb-2" for="table"> Category<b>*</b> </label>
+            <select
+              class="w-full bg-white p-2 border border-gray-300 rounded"
+              id="category"
+              required
+            >
+              <option value="">Choose a category</option>
+            </select>
+            <div id="space"></div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+            <div>
+              <label class="block mb-2" for="checkin-time">
+                Checkin time<b>*</b>
+              </label>
+              <input
+                class="w-full bg-white p-2 border border-gray-300 rounded"
+                id="checkin-time"
+                type="time"
+                placeholder="14:00"
+                required
+              />
+            </div>
+            <div>
+              <label class="block mb-2" for="checkout-time">
+                Checkout time<b>*</b>
+              </label>
+              <input
+                class="w-full bg-white p-2 border border-gray-300 rounded"
+                id="checkout-time"
+                type="time"
+                placeholder="17:00"
+                required
+              />
+            </div>
+            <div>
+              <label class="block mb-2" for="checkin-date">
+                Checkin date<b>*</b>
+              </label>
+              <input
+                class="w-full bg-white p-2 border border-gray-300 rounded"
+                id="checkin-date"
+                type="date"
+                placeholder="2025-02-27"
+                required
+              />
+            </div>
+          </div>
+          <button
+            id="confirm-btn"
+            class="bg_darkbrowndirt text-white px-4 py-2 rounded w-full hover:bg_darkbrowndirt"
+            type="submit"
+          >
+            Confirm
+          </button>
+        </form>
 
-    <div class="flex flex-col md:flex-row gap-6 mb-9">
-      <form id="booking-form" class="bg_browndirt p-6 rounded-lg flex-1">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-          <div>
-            <label class="block mb-2" for="first-name">
-              First name<b>*</b>
-            </label>
-            <input class="w-full bg-white p-2 border border-gray-300 rounded" id="first-name" type="text"
-              placeholder="Jane" required />
+        <div class="bg_browndirt p-6 rounded-lg flex-1">
+          <img
+            id="img_space"
+            alt="img demo"
+            class="rounded mb-4"
+            height="300"
+            src="https://storage.googleapis.com/a1aa/image/KHE5Oa0XvQaVzKF3Ms5YCFRlpUrh3M6JHAqXgtivPcI.jpg"
+            width="400"
+          />
+          <div class="text-xl">
+            <b>$</b>
+            <b id="price_space">Free</b>
           </div>
-          <div>
-            <label class="block mb-2" for="last-name">
-              Last name<b>*</b>
-            </label>
-            <input class="w-full bg-white p-2 border border-gray-300 rounded" id="last-name" type="text"
-              placeholder="Smitherton" required />
-          </div>
-        </div>
-        <div class="mb-4">
-          <label class="block mb-2" for="email">
-            Email address<b>*</b>
-          </label>
-          <input class="w-full bg-white p-2 border border-gray-300 rounded" id="email" type="email"
-            placeholder="email@janesfakedomain.net" required />
-        </div>
-        <div class="mb-4">
-          <label class="block mb-2" for="phone"> Phone number<b>*</b> </label>
-          <input class="w-full bg-white p-2 border border-gray-300 rounded" id="phone" type="tel" placeholder="+84"
-            required />
-        </div>
-        <div class="mb-4">
-          <label class="block mb-2" for="table"> Category<b>*</b> </label>
-          <select class="w-full bg-white p-2 border border-gray-300 rounded" id="category" required>
-            <option value="">Choose a category</option>
-          </select>
-          <div id="space"></div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-          <div>
-            <label class="block mb-2" for="checkin-time">
-              Checkin time<b>*</b>
-            </label>
-            <input class="w-full bg-white p-2 border border-gray-300 rounded" id="checkin-time" type="time"
-              placeholder="14:00" required />
-          </div>
-          <div>
-            <label class="block mb-2" for="checkout-time">
-              Checkout time<b>*</b>
-            </label>
-            <input class="w-full bg-white p-2 border border-gray-300 rounded" id="checkout-time" type="time"
-              placeholder="17:00" required />
-          </div>
-          <div>
-            <label class="block mb-2" for="checkin-date">
-              Checkin date<b>*</b>
-            </label>
-            <input class="w-full bg-white p-2 border border-gray-300 rounded" id="checkin-date" type="date"
-              placeholder="2025-02-27" required />
-          </div>
-        </div>
-        <button id="confirm-btn" class="bg_darkbrowndirt text-white px-4 py-2 rounded w-full hover:bg_darkbrowndirt"
-          type="submit">
-          Confirm
-        </button>
-      </form>
-
-      <div class="bg_browndirt p-6 rounded-lg">
-        <img id="img_space" alt="img demo" class="rounded mb-4" height="300"
-          src="https://storage.googleapis.com/a1aa/image/KHE5Oa0XvQaVzKF3Ms5YCFRlpUrh3M6JHAqXgtivPcI.jpg" width="400" />
-        <div class="text-xl">
-          <b>$</b>
-          <b id="price_space">Free</b>
-        </div>
-        <p class="text-lg" id="description_space">Have a good day</p>
+          <p class="text-lg" id="location_space">Vị trí phòng</p>
+          <p class="text-sky-50" id="description_space">Mô tả</p>
       </div>
     </div>
-  </div>
 
   <div id="cta-placeholder"></div>
   <div id="footer-placeholder"></div>
 
-  <p id="error-message" class="text-red-500 mt-2"></p>
+    <p id="error-message" class="text-red-500 mt-2"></p>
 
-  <script src="../js/main.js"></script>
-  <script src="../js/time.js"></script>
-  <script type="module" src="../js/booking.js"></script>
-  <script>
-    document
-      .getElementById("booking-form")
-      .addEventListener("submit", function (event) {
-        event.preventDefault();
+    <script src="../js/main.js"></script>
+    <script src="../js/time.js"></script>
+    <script type="module" src="../js/booking.js"></script>
+    <script>
+      document
+        .getElementById("booking-form")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault();
 
-        const firstName = document.getElementById("first-name").value.trim();
-        const lastName = document.getElementById("last-name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const phone = document.getElementById("phone").value.trim();
-        const category = document.getElementById("category").value;
-        const checkinDate = document.getElementById("checkin-date").value;
-        const checkinTime = document.getElementById("checkin-time").value;
-        const checkoutTime = document.getElementById("checkout-time").value;
+          const firstName = document.getElementById("first-name").value.trim();
+          const lastName = document.getElementById("last-name").value.trim();
+          const email = document.getElementById("email").value.trim();
+          const phone = document.getElementById("phone").value.trim();
+          const price = document.getElementById("price_space").innerText;
+          const spaceId = document.getElementById("spaceSelect").value;
+          const checkinDate = document.getElementById("checkin-date").value;
+          const checkinTime = document.getElementById("checkin-time").value;
+          const checkoutTime = document.getElementById("checkout-time").value;
+          if (
+            !firstName ||
+            !lastName ||
+            !email ||
+            !phone ||
+            !price ||
+            !spaceId ||
+            !checkinDate ||
+            !checkinTime ||
+            !checkoutTime
+          ) {
+            alert("You need too type information!");
+            return;
+          }
 
-        if (
-          !firstName ||
-          !lastName ||
-          !email ||
-          !phone ||
-          !category ||
-          !checkinDate ||
-          !checkinTime ||
-          !checkoutTime
-        ) {
-          alert("You need too type information!");
-          return;
-        }
-
-        const bookingData = {
-          firstName,
-          lastName,
-          email,
-          phone,
-          category,
-          checkinDate,
-          checkinTime,
-          checkoutTime,
-        };
-        localStorage.setItem("bookingData", JSON.stringify(bookingData));
-        window.location.href = "./payment.html";
-      });
-  </script>
-</body>
-
+          const bookingData = {
+            firstName,
+            lastName,
+            email,
+            phone,
+            price,
+            checkinDate,
+            checkinTime,
+            checkoutTime,
+          };
+          console.log(JSON.stringify(bookingData));
+          await makeBooking( firstName,
+            lastName,
+            email,
+            phone,
+            price,
+            checkinDate,
+            checkinTime,
+            checkoutTime,);
+        });
+    </script>
+  </body>
 </html>
