@@ -214,43 +214,6 @@
 </html>
 <script type="module">
   document
-  .getElementById("payment-form")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    const cardNum = document.getElementById("card-number").value.trim();
-    const expDate = document.getElementById("exp-date").value.trim();
-    const cvv = document.getElementById("cvv").value.trim();
-
-    if (!cardNum || !expDate || !cvv) {
-      alert("Bạn cần nhập đầy đủ thông tin thẻ!");
-      return;
-    }
-
-    // Lưu thông tin thẻ vào localStorage (chỉ là mô phỏng)
-    const paymentData = {
-      cardNum,
-      expDate,
-      cvv,
-      status: "pending", // Đánh dấu là đang xử lý
-    };
-    localStorage.setItem("paymentData", JSON.stringify(paymentData));
-
-    // Giả lập xử lý thanh toán
-    setTimeout(() => {
-      paymentData.status = "paid"; // Đánh dấu đã thanh toán
-      localStorage.setItem("paymentData", JSON.stringify(paymentData));
-
-      // Hiển thị modal thành công
-      let modal = document.getElementById("success-modal");
-      modal.classList.remove("hidden", "opacity-0");
-      modal.classList.add("opacity-100");
-      modal.children[0].classList.add("scale-100");
-
-    }, 2000); // Giả lập thời gian xử lý 2 giây
-  });
-
-  document
   .getElementById("close-modal")
   .addEventListener("click", function () {
     let modal = document.getElementById("success-modal");
