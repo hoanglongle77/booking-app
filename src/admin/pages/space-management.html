@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Management</title>
+    <link rel="stylesheet" href="../css/mobile.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../output.css" />
+
+</head>
+
+<body class="bg-gray-100 font-sans antialiased">
+    <div class="flex flex-col lg:flex-row h-screen">
+        <div id="adminSidebar"></div>
+        <!-- Main content -->
+        <div class="flex-1 p-6 bg-gray-50">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-6">
+                <div class="relative w-full md:w-1/2 mb-4 md:mb-0">
+                    <input
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200"
+                        placeholder="Search here" type="text" />
+                    <i class="fas fa-search absolute right-3 top-3 text-gray-400">
+                    </i>
+                </div>
+                <div class="flex items-center">
+                    <span class="text-gray-600 mr-4">
+                        Hello,
+                        <span class="font-semibold">
+                            Samantha
+                        </span>
+                    </span>
+                    <img alt="Profile picture of Samantha" class="w-10 h-10 rounded-full" height="40"
+                        src="https://storage.googleapis.com/a1aa/image/5HEil6Z9HaD1sMnB3vNwjo7UWPeRhcFaCWaEM660x5A.jpg"
+                        width="40" />
+                </div>
+            </div>
+            <h2 class="text-2xl font-semibold text-gray-800">
+                Space Management
+            </h2>
+            <p class="text-gray-500">
+                Hi, Samantha. Welcome back to Sedap Admin!
+            </p>
+            <div class="mt-6">
+                <div class="bg-white p-4 rounded-lg shadow-md w-full md:w-64">
+                    <div class="flex items-center">
+                        <i class="fas fa-calendar-alt text-blue-500 text-2xl mr-3">
+                        </i>
+                        <div>
+                            <p class="text-gray-600">
+                                Filter Periode
+                            </p>
+                            <p class="text-gray-400 text-sm">
+                                17 April 2020 - 21 May 2020
+                            </p>
+                        </div>
+                        <i class="fas fa-chevron-down text-gray-400 ml-auto">
+                        </i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/layout.js"></script>
+</body>
+
+</html>
