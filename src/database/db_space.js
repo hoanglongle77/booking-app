@@ -24,7 +24,7 @@ export async function getSpaces(categoryId) {
   }
 }
 
-// Lấy Space theo ID trong Category
+
 export async function getSpaceById(categoryId, spaceId) {
   try {
     const spaceRef = ref(db, `categories/${categoryId}/spaces/${spaceId}`);
@@ -36,7 +36,6 @@ export async function getSpaceById(categoryId, spaceId) {
   }
 }
 
-// Lấy danh sách Seat trong một Space
 export async function getSeatBySpace(categoryId, spaceId) {
   try {
     const seatsRef = ref(db, `categories/${categoryId}/spaces/${spaceId}/seats`);
