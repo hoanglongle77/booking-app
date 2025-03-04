@@ -1,234 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Home</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/css/splide.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/css/splide.min.css" />
     <link href="../output.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/js/splide.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
     <link rel="stylesheet" href="../input.css" />
-  </head>
+</head>
 
-  <body class="bg-white">
+<body class="bg-white">
     <div id="header-placeholder"></div>
     <main>
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20">
-        <!-- Tiêu đề -->
-        <h1 class="text-2xl sm:text-3xl font-bold text_darkbrowndirt">Home</h1>
-        <p class="text-gray-600 mt-2 text-sm sm:text-base">
-          Find the perfect space for your event, work or relax! We offer a wide
-          range of meeting rooms, shared offices, event spaces with modern
-          facilities, easy to book quickly. 🚀 Book today and experience
-          flexibility and convenience!
-        </p>
-        <a href="./contact.html">
-          <button
-            class="mt-4 px-4 sm:px-6 py-2 text-sm sm:text-base bg_darkbrowndirt text-white rounded-md hover:bg_browndirt"
-          >
-            Contact Us
-          </button>
-        </a>
-
-        <!-- Hình ảnh chính -->
-        <div class="mt-4 sm:mt-6">
-          <div id="image-slider" class="splide">
-            <div class="splide__track">
-              <ul class="splide__list">
-                <li class="splide__slide">
-                  <img
-                    src="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_800,h_500/https://duhunggroups.com/wp-content/uploads/2022/09/sfe.jpg"
-                    class="w-full max-h-[200px] sm:max-h-[500px] object-cover rounded-lg shadow-md"
-                    alt="Slide 3"
-                  />
-                </li>
-                <li class="splide__slide">
-                  <img
-                    src="https://www.frontsigns.com/wp-content/uploads/2021/11/3D-meeting-signage.jpg"
-                    class="w-full max-h-[200px] sm:max-h-[500px] object-cover rounded-lg shadow-md"
-                    alt="Main Office"
-                  />
-                </li>
-                <li class="splide__slide">
-                  <img
-                    src="https://files.oaiusercontent.com/file-EFuPLw3NN1xk5JiUaoRmT4?se=2025-02-27T08%3A18%3A34Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D2ce08279-5904-47ab-9dae-2dc5a319d0d0.webp&sig=MapCduG%2B/zgPqWYhh1s7QfxrtfXRNzBMJ09x08DjcGw%3D"
-                    class="w-full max-h-[200px] sm:max-h-[500px] object-cover rounded-lg shadow-md"
-                    alt="Main Office"
-                  />
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <h2 class="mt-8 text-xl sm:text-2xl font-semibold text_darkbrowndirt">
-          Our space options
-        </h2>
-
-        <div
-          id="space-container"
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4 transition-opacity duration-300 opacity-100"
-        ></div>
-
-        <!-- Phân trang -->
-        <div
-          id="pagination"
-          class="flex justify-center items-center space-x-2 mt-6"
-        ></div>
-
-        <ul id="spaceList"></ul>
-
-        <!-- Lý do chọn chúng tôi -->
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 items-center py-6 sm:py-10"
-        >
-          <div>
-            <img
-              src="https://storage.googleapis.com/circo-coworking--1550040568856.appspot.com/images/DSC_8702_b6e19c67e2.jpg"
-              class="w-full rounded-lg shadow-md"
-              alt="Conference Room"
-            />
-          </div>
-          <div>
-            <h2 class="text-xl sm:text-2xl font-semibold text_darkbrowndirt">
-              Reason to chose us
-            </h2>
+        <div class="max-w-7xl mx-auto px-4 sm:px-4 lg:px-20">
+            <!-- Tiêu đề -->
+            <h1 class="text-2xl sm:text-3xl font-bold text_darkbrowndirt">Home</h1>
             <p class="text-gray-600 mt-2 text-sm sm:text-base">
-              ✅ Modern & Comfortable Spaces - Fully equipped for meetings,
-              work, or events. <br />
-              ✅ Prime Location – Easy access in the city center. <br />
-              ✅ Professional Services – 24/7 support for a seamless experience.
-              <br />
-              ✅ Flexible Booking – Rent by hour, day, or month with ease.
-              <br />
-              ✅ Affordable Pricing – Competitive rates for individuals and
-              businesses.
+                Find the perfect space for your event, work or relax! We offer a wide
+                range of meeting rooms, shared offices, event spaces with modern
+                facilities, easy to book quickly. 🚀 Book today and experience
+                flexibility and convenience!
             </p>
+            <a href="./contact.html">
+                <button
+                    class="mt-4 px-4 sm:px-6 py-2 text-sm sm:text-base bg_darkbrowndirt text-white rounded-md hover:bg_browndirt">
+                    Contact Us
+                </button>
+            </a>
 
-            <div class="mt-4 sm:mt-6 flex flex-col sm:flex-row gap-3">
-              <button
-                class="px-4 py-2 bg_darkbrowndirt text-white rounded-md hover:bg-orange-600 text-sm sm:text-base"
-                onclick="window.location.href='./booking.html'"
-              >
-                Booking now
-              </button>
-
-              <button
-                class="px-4 py-2 border border_darkbrowndirt text_darkbrowndirt rounded-md hover:bg-orange-100 text-sm sm:text-base"
-                onclick="window.location.href='./contact.html'"
-              >
-                Contact Us
-              </button>
+            <!-- Hình ảnh chính -->
+            <div class="mt-4 sm:mt-6">
+                <div id="image-slider" class="splide">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                <img src="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_800,h_500/https://duhunggroups.com/wp-content/uploads/2022/09/sfe.jpg"
+                                    class="w-full max-h-[200px] sm:max-h-[500px] object-cover rounded-lg shadow-md"
+                                    alt="Slide 3" />
+                            </li>
+                            <li class="splide__slide">
+                                <img src="https://www.frontsigns.com/wp-content/uploads/2021/11/3D-meeting-signage.jpg"
+                                    class="w-full max-h-[200px] sm:max-h-[500px] object-cover rounded-lg shadow-md"
+                                    alt="Main Office" />
+                            </li>
+                            <li class="splide__slide">
+                                <img src="https://files.oaiusercontent.com/file-EFuPLw3NN1xk5JiUaoRmT4?se=2025-02-27T08%3A18%3A34Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D2ce08279-5904-47ab-9dae-2dc5a319d0d0.webp&sig=MapCduG%2B/zgPqWYhh1s7QfxrtfXRNzBMJ09x08DjcGw%3D"
+                                    class="w-full max-h-[200px] sm:max-h-[500px] object-cover rounded-lg shadow-md"
+                                    alt="Main Office" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-          </div>
+            <h2 class="mt-8 text-xl sm:text-2xl font-semibold text_darkbrowndirt">
+                Our space options
+            </h2>
+
+            <div id="space-container"
+                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4 transition-opacity duration-300 opacity-100">
+            </div>
+
+            <!-- Phân trang -->
+            <div id="pagination" class="flex justify-center items-center space-x-2 mt-6"></div>
+
+            <ul id="spaceList"></ul>
+
+            <!-- Lý do chọn chúng tôi -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 items-center py-6 sm:py-10">
+                <div>
+                    <img src="https://storage.googleapis.com/circo-coworking--1550040568856.appspot.com/images/DSC_8702_b6e19c67e2.jpg"
+                        class="w-full rounded-lg shadow-md" alt="Conference Room" />
+                </div>
+                <div>
+                    <h2 class="text-xl sm:text-2xl font-semibold text_darkbrowndirt">
+                        Reason to choose us
+                    </h2>
+                    <p class="text-gray-600 mt-2 text-sm sm:text-base">
+                        ✅ Modern & Comfortable Spaces - Fully equipped for meetings,
+                        work, or events. <br />
+                        ✅ Prime Location – Easy access in the city center. <br />
+                        ✅ Professional Services – 24/7 support for a seamless experience.
+                        <br />
+                        ✅ Flexible Booking – Rent by hour, day, or month with ease.
+                        <br />
+                        ✅ Affordable Pricing – Competitive rates for individuals and
+                        businesses.
+                    </p>
+
+                    <div class="mt-4 sm:mt-6 flex flex-col sm:flex-row gap-3">
+                        <button
+                            class="px-4 py-2 bg_darkbrowndirt text-white rounded-md hover:bg-orange-600 text-sm sm:text-base"
+                            onclick="window.location.href='./booking.html'">
+                            Booking now
+                        </button>
+
+                        <button
+                            class="px-4 py-2 border border_darkbrowndirt text_darkbrowndirt rounded-md hover:bg-orange-100 text-sm sm:text-base"
+                            onclick="window.location.href='./contact.html'">
+                            Contact Us
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section heading -->
+            <h2 class="mt-16 text-2xl font-semibold text_darkbrowndirt">
+                Our Room Types
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                <div>
+                    <img src="https://yealink.vn/wp-content/uploads/2022/02/hg.jpg"
+                        class="w-full h-[200px] sm:h-[250px] object-cover rounded-lg shadow-md" alt="Office" />
+                    <h3 class="font-semibold mt-2">Private Room (Single Room)</h3>
+                    <p class="text-gray-500">
+                        Perfect for individuals who need a quiet and comfortable
+                        workspace. Fully equipped with a desk, chair, high-speed WiFi, and
+                        air conditioning—ideal for remote work, studying, or private
+                        meetings.
+                    </p>
+                </div>
+                <div>
+                    <img src="https://dplusvn.com/wp-content/uploads/2020/01/tieu-chuan-vi-tri-dat-phong-hop.jpg"
+                        class="w-full h-[200px] sm:h-[250px] object-cover rounded-lg shadow-md" alt="Office" />
+                    <h3 class="font-semibold mt-2">Group Room</h3>
+                    <p class="text-gray-500">
+                        Designed for teams and small gatherings. Spacious and equipped
+                        with multiple seats, a large table, whiteboard, and presentation
+                        screen. Great for team discussions, collaborations, and small
+                        events.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Customer Reviews -->
+            <h2 class="mt-16 text-2xl font-semibold text_darkbrowndirt">
+                Customer Reviews
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
+                <div class="p-6 bg-white rounded-lg shadow-md">
+                    <p class="text-gray-600 italic">"A terrific piece of praise"</p>
+                    <div class="flex items-center mt-4">
+                        <img src="https://img.freepik.com/free-vector/cute-girl-holding-coffee-bag-walking-cartoon-vector-icon-illustration-people-drink-isolated-flat_138676-10362.jpg?t=st=1740647407~exp=1740651007~hmac=50f61269b6238f0f0958d4494a8475ecf747acfaf9191c7cc8c0480a049d7198&w=900"
+                            alt="Avatar" class="w-10 h-10 rounded-full" />
+                        <div class="ml-3">
+                            <h4 class="font-semibold">John Doe</h4>
+                            <p class="text-gray-500 text-sm">CEO at Company</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-md">
+                    <p class="text-gray-600 italic">"A fantastic bit of feedback"</p>
+                    <div class="flex items-center mt-4">
+                        <img src="https://img.freepik.com/free-vector/cute-girl-holding-coffee-bag-walking-cartoon-vector-icon-illustration-people-drink-isolated-flat_138676-10362.jpg?t=st=1740647407~exp=1740651007~hmac=50f61269b6238f0f0958d4494a8475ecf747acfaf9191c7cc8c0480a049d7198&w=900"
+                            alt="Avatar" class="w-10 h-10 rounded-full" />
+                        <div class="ml-3">
+                            <h4 class="font-semibold">Jane Smith</h4>
+                            <p class="text-gray-500 text-sm">Marketing Manager</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-md">
+                    <p class="text-gray-600 italic">"A genuinely glowing review"</p>
+                    <div class="flex items-center mt-4">
+                        <img src="https://img.freepik.com/free-vector/cute-girl-holding-coffee-bag-walking-cartoon-vector-icon-illustration-people-drink-isolated-flat_138676-10362.jpg?t=st=1740647407~exp=1740651007~hmac=50f61269b6238f0f0958d4494a8475ecf747acfaf9191c7cc8c0480a049d7198&w=900"
+                            alt="Avatar" class="w-10 h-10 rounded-full" />
+                        <div class="ml-3">
+                            <h4 class="font-semibold">Alice Johnson</h4>
+                            <p class="text-gray-500 text-sm">Designer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <!-- Section heading -->
-        <h2 class="mt-16 text-2xl font-semibold text_darkbrowndirt">
-          Our Room Types
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-          <div>
-            <img
-              src="https://yealink.vn/wp-content/uploads/2022/02/hg.jpg"
-              class="w-full h-[200px] sm:h-[250px] object-cover rounded-lg shadow-md"
-              alt="Office"
-            />
-            <h3 class="font-semibold mt-2">Private Room (Single Room)</h3>
-            <p class="text-gray-500">
-              Perfect for individuals who need a quiet and comfortable
-              workspace. Fully equipped with a desk, chair, high-speed WiFi, and
-              air conditioning—ideal for remote work, studying, or private
-              meetings.
-            </p>
-          </div>
-          <div>
-            <img
-              src="https://dplusvn.com/wp-content/uploads/2020/01/tieu-chuan-vi-tri-dat-phong-hop.jpg"
-              class="w-full h-[200px] sm:h-[250px] object-cover rounded-lg shadow-md"
-              alt="Office"
-            />
-            <h3 class="font-semibold mt-2">Group Room</h3>
-            <p class="text-gray-500">
-              Designed for teams and small gatherings. Spacious and equipped
-              with multiple seats, a large table, whiteboard, and presentation
-              screen. Great for team discussions, collaborations, and small
-              events.
-            </p>
-          </div>
-        </div>
-
-        <!-- Customer Reviews -->
-        <h2 class="mt-16 text-2xl font-semibold text_darkbrowndirt">
-          Customer Reviews
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
-          <div class="p-6 bg-white rounded-lg shadow-md">
-            <p class="text-gray-600 italic">"A terrific piece of praise"</p>
-            <div class="flex items-center mt-4">
-              <img
-                src="https://img.freepik.com/free-vector/cute-girl-holding-coffee-bag-walking-cartoon-vector-icon-illustration-people-drink-isolated-flat_138676-10362.jpg?t=st=1740647407~exp=1740651007~hmac=50f61269b6238f0f0958d4494a8475ecf747acfaf9191c7cc8c0480a049d7198&w=900"
-                alt="Avatar"
-                class="w-10 h-10 rounded-full"
-              />
-              <div class="ml-3">
-                <h4 class="font-semibold">John Doe</h4>
-                <p class="text-gray-500 text-sm">CEO at Company</p>
-              </div>
-            </div>
-          </div>
-          <div class="p-6 bg-white rounded-lg shadow-md">
-            <p class="text-gray-600 italic">"A fantastic bit of feedback"</p>
-            <div class="flex items-center mt-4">
-              <img
-                src="https://img.freepik.com/free-vector/cute-girl-holding-coffee-bag-walking-cartoon-vector-icon-illustration-people-drink-isolated-flat_138676-10362.jpg?t=st=1740647407~exp=1740651007~hmac=50f61269b6238f0f0958d4494a8475ecf747acfaf9191c7cc8c0480a049d7198&w=900"
-                alt="Avatar"
-                class="w-10 h-10 rounded-full"
-              />
-              <div class="ml-3">
-                <h4 class="font-semibold">Jane Smith</h4>
-                <p class="text-gray-500 text-sm">Marketing Manager</p>
-              </div>
-            </div>
-          </div>
-          <div class="p-6 bg-white rounded-lg shadow-md">
-            <p class="text-gray-600 italic">"A genuinely glowing review"</p>
-            <div class="flex items-center mt-4">
-              <img
-                src="https://img.freepik.com/free-vector/cute-girl-holding-coffee-bag-walking-cartoon-vector-icon-illustration-people-drink-isolated-flat_138676-10362.jpg?t=st=1740647407~exp=1740651007~hmac=50f61269b6238f0f0958d4494a8475ecf747acfaf9191c7cc8c0480a049d7198&w=900"
-                alt="Avatar"
-                class="w-10 h-10 rounded-full"
-              />
-              <div class="ml-3">
-                <h4 class="font-semibold">Alice Johnson</h4>
-                <p class="text-gray-500 text-sm">Designer</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </main>
+    <div id="cta-placeholder"></div>
     <div id="footer-placeholder"></div>
 
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        new Splide("#image-slider", {
-          type: "fade", // Hiệu ứng fade mượt hơn
-          autoplay: true, // Tự động chạy
-          interval: 3000, // Chạy sau mỗi 3s
-          pauseOnHover: false, // Không dừng khi rê chuột
-          arrows: true, // Hiển thị nút điều hướng
-          pagination: true, // Hiển thị chấm tròn chuyển slide
-          speed: 1000, // Tăng tốc độ chuyển slide
-          rewind: true, // Cho phép quay lại slide đầu
-        }).mount();
-      });
+        document.addEventListener("DOMContentLoaded", function () {
+            new Splide("#image-slider", {
+                type: "fade", // Hiệu ứng fade mượt hơn
+                autoplay: true, // Tự động chạy
+                interval: 3000, // Chạy sau mỗi 3s
+                pauseOnHover: false, // Không dừng khi rê chuột
+                arrows: true, // Hiển thị nút điều hướng
+                pagination: true, // Hiển thị chấm tròn chuyển slide
+                speed: 1000, // Tăng tốc độ chuyển slide
+                rewind: true, // Cho phép quay lại slide đầu
+            }).mount();
+        });
     </script>
     <script src="../js/main.js"></script>
     <script type="module" src="../js/index.js"></script>
-  </body>
+</body>
+
 </html>
