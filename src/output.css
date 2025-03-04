@@ -10,9 +10,11 @@
     --color-orange-100: oklch(0.954 0.038 75.164);
     --color-orange-600: oklch(0.646 0.222 41.116);
     --color-orange-700: oklch(0.553 0.195 38.402);
+    --color-orange-900: oklch(0.408 0.123 38.172);
     --color-green-100: oklch(0.962 0.044 156.743);
     --color-green-500: oklch(0.723 0.219 149.579);
     --color-green-600: oklch(0.627 0.194 149.214);
+    --color-sky-50: oklch(0.977 0.013 236.62);
     --color-sky-700: oklch(0.5 0.134 242.749);
     --color-gray-100: oklch(0.967 0.003 264.542);
     --color-gray-200: oklch(0.928 0.006 264.531);
@@ -609,9 +611,6 @@
   .h-16 {
     height: calc(var(--spacing) * 16);
   }
-  .h-35 {
-    height: calc(var(--spacing) * 35);
-  }
   .h-60 {
     height: calc(var(--spacing) * 60);
   }
@@ -660,8 +659,8 @@
   .w-16 {
     width: calc(var(--spacing) * 16);
   }
-  .w-20 {
-    width: calc(var(--spacing) * 20);
+  .w-40 {
+    width: calc(var(--spacing) * 40);
   }
   .w-64 {
     width: calc(var(--spacing) * 64);
@@ -683,6 +682,9 @@
   }
   .max-w-7xl {
     max-width: var(--container-7xl);
+  }
+  .max-w-100 {
+    max-width: calc(var(--spacing) * 100);
   }
   .max-w-full {
     max-width: 100%;
@@ -1115,6 +1117,9 @@
   }
   .gap-6 {
     gap: calc(var(--spacing) * 6);
+  }
+  .gap-10 {
+    gap: calc(var(--spacing) * 10);
   }
   .space-y-2 {
     :where(& > :not(:last-child)) {
@@ -1634,6 +1639,9 @@
   .py-8 {
     padding-block: calc(var(--spacing) * 8);
   }
+  .pt-16 {
+    padding-top: calc(var(--spacing) * 16);
+  }
   .text-center {
     text-align: center;
   }
@@ -1814,8 +1822,14 @@
   .text-orange-600 {
     color: var(--color-orange-600);
   }
+  .text-orange-900 {
+    color: var(--color-orange-900);
+  }
   .text-red-500 {
     color: var(--color-red-500);
+  }
+  .text-sky-50 {
+    color: var(--color-sky-50);
   }
   .text-white {
     color: var(--color-white);
@@ -2356,6 +2370,11 @@
       opacity: 50%;
     }
   }
+  .sm\:mx-16 {
+    @media (width >= 40rem) {
+      margin-inline: calc(var(--spacing) * 16);
+    }
+  }
   .sm\:mt-6 {
     @media (width >= 40rem) {
       margin-top: calc(var(--spacing) * 6);
@@ -2369,11 +2388,6 @@
   .sm\:flex {
     @media (width >= 40rem) {
       display: flex;
-    }
-  }
-  .sm\:hidden {
-    @media (width >= 40rem) {
-      display: none;
     }
   }
   .sm\:h-\[250px\] {
@@ -2474,6 +2488,11 @@
       line-height: var(--tw-leading, var(--text-base--line-height));
     }
   }
+  .md\:mx-16 {
+    @media (width >= 48rem) {
+      margin-inline: calc(var(--spacing) * 16);
+    }
+  }
   .md\:my-4 {
     @media (width >= 48rem) {
       margin-block: calc(var(--spacing) * 4);
@@ -2564,9 +2583,9 @@
       gap: calc(var(--spacing) * 10);
     }
   }
-  .md\:gap-30 {
+  .md\:gap-20 {
     @media (width >= 48rem) {
-      gap: calc(var(--spacing) * 30);
+      gap: calc(var(--spacing) * 20);
     }
   }
   .md\:space-x-6 {
@@ -2608,11 +2627,6 @@
   .lg\:px-20 {
     @media (width >= 64rem) {
       padding-inline: calc(var(--spacing) * 20);
-    }
-  }
-  .lg\:px-30 {
-    @media (width >= 64rem) {
-      padding-inline: calc(var(--spacing) * 30);
     }
   }
   .xl\:mx-3 {
@@ -2688,6 +2702,9 @@
   transition: 0.5s;
 }
 .nav-link {
+  color: #4a5568;
+  transition: color 0.3s ease-in-out;
+  text-transform: ;
   text-decoration: none;
   transition: color 0.3s ease-in-out;
 }
@@ -2748,6 +2765,22 @@
 html, body {
   max-width: 100%;
   overflow-x: hidden;
+}
+.booking-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ce721d;
+  color: white;
+  padding: 15px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+.booking-button:hover {
+  background-color: #ce721d;
 }
 @property --tw-translate-x {
   syntax: "*";

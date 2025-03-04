@@ -124,7 +124,7 @@
           </button>
         </form>
 
-        <div class="bg_browndirt p-6 rounded-lg">
+        <div class="max-w-100 bg_browndirt p-6 rounded-lg flex-1">
           <img
             id="img_space"
             alt="img demo"
@@ -137,12 +137,13 @@
             <b>$</b>
             <b id="price_space">Free</b>
           </div>
-          <p class="text-lg" id="description_space">Have a good day</p>
-        </div>
+          <p class="text-lg mt-4 mb-4" id="location_space">Location</p>
+          <p class="text-sky-50" id="description_space">Description</p>
       </div>
     </div>
 
-    <div id="footer-placeholder"></div>
+  <div id="cta-placeholder"></div>
+  <div id="footer-placeholder"></div>
 
     <p id="error-message" class="text-red-500 mt-2"></p>
 
@@ -152,24 +153,25 @@
     <script>
       document
         .getElementById("booking-form")
-        .addEventListener("submit", function (event) {
+        .addEventListener("submit", async function (event) {
           event.preventDefault();
 
           const firstName = document.getElementById("first-name").value.trim();
           const lastName = document.getElementById("last-name").value.trim();
           const email = document.getElementById("email").value.trim();
           const phone = document.getElementById("phone").value.trim();
-          const category = document.getElementById("category").value;
+          const price = document.getElementById("price_space").innerText;
+          const spaceId = document.getElementById("spaceSelect").value;
           const checkinDate = document.getElementById("checkin-date").value;
           const checkinTime = document.getElementById("checkin-time").value;
           const checkoutTime = document.getElementById("checkout-time").value;
-
           if (
             !firstName ||
             !lastName ||
             !email ||
             !phone ||
-            !category ||
+            !price ||
+            !spaceId ||
             !checkinDate ||
             !checkinTime ||
             !checkoutTime
@@ -178,21 +180,26 @@
             return;
           }
 
-        const bookingData = {
-          firstName,
-          lastName,
-          email,
-          phone,
-          category,
-          checkinDate,
-          checkinTime,
-          checkoutTime,
-        };
-        localStorage.setItem("bookingData", JSON.stringify(bookingData));
-        window.location.href = "./payment.html";
-      });
-  </script>
-  <div id="cta-placeholder"></div>
-</body>
-
+          const bookingData = {
+            firstName,
+            lastName,
+            email,
+            phone,
+            price,
+            checkinDate,
+            checkinTime,
+            checkoutTime,
+          };
+          console.log(JSON.stringify(bookingData));
+          await makeBooking( firstName,
+            lastName,
+            email,
+            phone,
+            price,
+            checkinDate,
+            checkinTime,
+            checkoutTime,);
+        });
+    </script>
+  </body>
 </html>
