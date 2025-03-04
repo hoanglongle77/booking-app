@@ -24,6 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("description").textContent = roomDescription;
   }
 });
-document.addEventListener("click", () => {
+document.getElementById("confirm").addEventListener("click", () => {
   window.location.href = "payment.html";
 });
