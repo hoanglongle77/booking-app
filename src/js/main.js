@@ -12,4 +12,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
   loadComponent("header-placeholder", "../components/header.html");
   loadComponent("footer-placeholder", "../components/footer.html");
+  loadComponent("cta-placeholder","../components/cta.html");
 });
