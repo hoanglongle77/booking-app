@@ -178,19 +178,21 @@
             return;
           }
 
-          const bookingData = {
-            firstName,
-            lastName,
-            email,
-            phone,
-            category,
-            checkinDate,
-            checkinTime,
-            checkoutTime,
-          };
-          localStorage.setItem("bookingData", JSON.stringify(bookingData));
-          window.location.href = "./payment.html";
-        });
-    </script>
-  </body>
+        const bookingData = {
+          firstName,
+          lastName,
+          email,
+          phone,
+          category,
+          checkinDate,
+          checkinTime,
+          checkoutTime,
+        };
+        localStorage.setItem("bookingData", JSON.stringify(bookingData));
+        window.location.href = "./payment.html";
+      });
+  </script>
+  <div id="cta-placeholder"></div>
+</body>
+
 </html>
