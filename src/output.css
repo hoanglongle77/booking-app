@@ -1589,10 +1589,6 @@
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
   }
-  .text-3xl {
-    font-size: var(--text-3xl);
-    line-height: var(--tw-leading, var(--text-3xl--line-height));
-  }
   .text-4xl {
     font-size: var(--text-4xl);
     line-height: var(--tw-leading, var(--text-4xl--line-height));
@@ -2589,6 +2585,7 @@
 .nav-link {
   color: #4a5568;
   transition: color 0.3s ease-in-out;
+  text-transform: ;
 }
 .nav-link:hover {
   color: #BC6C25;
