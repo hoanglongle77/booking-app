@@ -13,7 +13,7 @@
   <div id="header-placeholder"></div>
 
   <div class="max-w-6xl mx-auto p-6">
-    <h1 class="font-inter text-4xl font-bold text_darkbrowndirt mb-10 mt-10">
+    <h1 class="font-inter text-4xl font-bold text_darkbrowndirt mb-10">
       Booking space page
     </h1>
 
@@ -77,13 +77,14 @@
         </button>
       </form>
 
-      <div class="bg_browndirt p-6 rounded-lg">
+      <div id="spaceDetails" class="max-w-100 bg_browndirt p-6 rounded-lg">
         <img id="img_space" alt="img demo" class="rounded mb-4" height="300"
           src="https://storage.googleapis.com/a1aa/image/KHE5Oa0XvQaVzKF3Ms5YCFRlpUrh3M6JHAqXgtivPcI.jpg" width="400" />
         <div class="text-xl">
           <b>$</b>
           <b id="price_space">Free</b>
         </div>
+        <p class="text-lg mb-4 mt-4" id="location_space">location</p>
         <p class="text-lg" id="description_space">Have a good day</p>
       </div>
     </div>
@@ -95,6 +96,7 @@
 
   <script src="../js/main.js"></script>
   <script src="../js/time.js"></script>
+  <script type="module" src="../js/booking_submit.js"></script>
   <script type="module" src="../js/booking.js"></script>
   <script>
     document
