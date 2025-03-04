@@ -1,80 +1,33 @@
-import { db, ref, set, get } from "../config/firebase.js";
-import { v4 as uuidv4 } from "https://cdn.jsdelivr.net/npm/uuid@9.0.1/+esm";
+import {
+  getDatabase,
+  ref,
+  onValue,
+} from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+import { db } from "../config/firebase.js"; // Import từ config chuẩn
 
-export async function getCategories() {
-  try {
-    const categoriesRef = ref(db, "categories");
-    const snapshot = await get(categoriesRef);
-    return snapshot.exists() ? snapshot.val() : {};
-  } catch (error) {
-    console.error("Lỗi khi lấy categories:", error);
-    return {};
-  }
-}
+export function fetchSpacesRealTime(callback) {
+  const spacesRef = ref(db, "categories"); // Lấy toàn bộ categories từ database
 
-// Lấy danh sách Spaces theo Category ID
-export async function getSpaces(categoryId) {
-  try {
-    const spacesRef = ref(db, `categories/${categoryId}/spaces`);
-    const snapshot = await get(spacesRef);
-    return snapshot.exists() ? snapshot.val() : {};
-  } catch (error) {
-    console.error(`Lỗi khi lấy spaces của category ${categoryId}:`, error);
-    return {};
-  }
-}
-
-// Lấy Space theo ID trong Category
-export async function getSpaceById(categoryId, spaceId) {
-  try {
-    const spaceRef = ref(db, `categories/${categoryId}/spaces/${spaceId}`);
-    const snapshot = await get(spaceRef);
-    return snapshot.exists() ? snapshot.val() : null;
-  } catch (error) {
-    console.error(`Lỗi khi lấy space ${spaceId} trong category ${categoryId}:`, error);
-    return null;
-  }
-}
-
-// Lấy danh sách Seat trong một Space
-export async function getSeatBySpace(categoryId, spaceId) {
-  try {
-    const seatsRef = ref(db, `categories/${categoryId}/spaces/${spaceId}/seats`);
-    const snapshot = await get(seatsRef);
-
-    if (!snapshot.exists()) {
-      console.log(`Không có ghế trong space ${spaceId}`);
-      return [];
+  onValue(spacesRef, (snapshot) => {
+    const categoriesData = snapshot.val();
+    if (!categoriesData) {
+      console.warn("⚠ Không có dữ liệu categories!");
+      callback([]);
+      return;
     }
 
-    const seats = snapshot.val();
-    return Object.keys(seats).map((seatId) => ({
-      id: seatId,
-      ...seats[seatId],
-    }));
-  } catch (error) {
-    console.error(`Lỗi khi lấy ghế của space ${spaceId}:`, error);
-    return [];
-  }
-}
+    let allSpaces = [];
 
-// Lấy thông tin Seat theo ID
-export async function getSeatById(categoryId, spaceId, seatId) {
-  try {
-    const seatRef = ref(db, `categories/${categoryId}/spaces/${spaceId}/seats/${seatId}`);
-    const snapshot = await get(seatRef);
+    // Lặp qua từng category để lấy spaces
+    Object.entries(categoriesData).forEach(([categoryId, category]) => {
+      if (category.spaces) {
+        Object.entries(category.spaces).forEach(([spaceId, space]) => {
+          allSpaces.push({ id: spaceId, ...space });
+        });
+      }
+    });
 
-    if (!snapshot.exists()) {
-      console.log(`Không tìm thấy seat ${seatId} trong space ${spaceId}`);
-      return null;
-    }
-
-    return {
-      id: seatId,
-      ...snapshot.val(),
-    };
-  } catch (error) {
-    console.error(`Lỗi khi lấy seat ${seatId} trong space ${spaceId}:`, error);
-    return null;
-  }
+    console.log("✅ Danh sách spaces:", allSpaces);
+    callback(allSpaces);
+  });
 }
