@@ -57,7 +57,7 @@ const loadSpaceDetails = async (categoryId, spaceId) => {
   }
 
   getElement("img_space").src =
-    space.imageUrls || "https://via.placeholder.com/400x300";
+    space.imageUrl || "https://via.placeholder.com/400x300";
   getElement("price_space").textContent = space.price_per_hour
     ? `${space.price_per_hour}`
     : "Free";
@@ -109,23 +109,20 @@ const makeBooking = async (
       totalAmount
     );
 
-    alert(
-      bookingCreating.status === "OK"
-        ? "Đặt chỗ thành công!"
-        : "Đặt chỗ thất bại!"
-    );
     if (bookingCreating.status === "OK") {
       const data = {
         userName: userCreating.newUser.name,
         roomLocation: space.location,
         roomDescription: categories[selectedCategoryId].description,
+        roomImg: space.imageUrl,
+        bookingId: bookingCreating.bookingId
       };
       localStorage.setItem(
         "bookingData",
         JSON.stringify(bookingCreating.newBooking)
       );
       localStorage.setItem("data", JSON.stringify(data));
-      window.location.href = "confirm.html";
+      window.location.href = "payment.html";
     }
   } catch (err) {
     alert(`Lỗi booking: ${err}`);

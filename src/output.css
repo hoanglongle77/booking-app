@@ -689,6 +689,9 @@
   .max-w-7xl {
     max-width: var(--container-7xl);
   }
+  .max-w-100 {
+    max-width: calc(var(--spacing) * 100);
+  }
   .max-w-full {
     max-width: 100%;
   }
@@ -2633,11 +2636,6 @@
       gap: calc(var(--spacing) * 20);
     }
   }
-  .md\:gap-30 {
-    @media (width >= 48rem) {
-      gap: calc(var(--spacing) * 30);
-    }
-  }
   .md\:space-x-6 {
     @media (width >= 48rem) {
       :where(& > :not(:last-child)) {
@@ -2679,6 +2677,7 @@
       padding-inline: calc(var(--spacing) * 20);
     }
   }
+
   .lg\:px-30 {
     @media (width >= 64rem) {
       padding-inline: calc(var(--spacing) * 30);
