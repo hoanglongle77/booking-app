@@ -41,7 +41,7 @@ function renderSpaces() {
       "transition-transform",
       "duration-300",
       "cursor-pointer", // Hiển thị con trỏ để biết có thể click
-      "hover:scale-150"
+      "hover:scale-105"
     );
 
     spaceCard.innerHTML = `

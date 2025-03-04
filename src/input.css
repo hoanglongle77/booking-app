@@ -82,3 +82,8 @@
 .border-red-500 {
   border: 2px solid red !important;
 }
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
