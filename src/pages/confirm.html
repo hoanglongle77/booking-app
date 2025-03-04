@@ -3,21 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Confirmation Page</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
       rel="stylesheet"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
 
-    <link href="../output.css" rel="stylesheet" />
-  </head>
     <link href="../output.css" rel="stylesheet" />
   </head>
 
@@ -70,7 +62,7 @@
           </p>
 
           <button
-            class="bg-[#BC6C25] text-white px-6 py-3 rounded mt-4 w-full hover:bg-[#9E5A1E] transition"
+            class="bg-[#BC6C25] text-white px-6 py-3 rounded mt-4 w-full hover:bg-[#9E5A1E] transition" id="confirm"
           >
             Pay
           </button>
@@ -86,40 +78,18 @@
       ></div>
 
       <div class="flex justify-center mt-6">
-        <nav class="inline-flex space-x-1 sm:space-x-2 text-sm sm:text-base">
-          <button
-            onclick="prevPage()"
-            class="px-2 py-1 sm:px-4 sm:py-2 bg_darkbrowndirt text-white rounded-l-md disabled:opacity-50"
-          >
-            Previous
-          </button>
-          <div class="flex space-x-1 sm:space-x-2">
-            <button
-              onclick="changePage(1)"
-              class="page-btn px-2 py-1 sm:px-4 sm:py-2 bg-gray-200 hover:bg-gray-300"
-            >
-              1
-            </button>
-            <button
-              onclick="changePage(2)"
-              class="page-btn px-2 py-1 sm:px-4 sm:py-2 bg-gray-200 hover:bg-gray-300"
-            >
-              2
-            </button>
-            <button
-              onclick="changePage(3)"
-              class="page-btn px-2 py-1 sm:px-4 sm:py-2 bg-gray-200 hover:bg-gray-300"
-            >
-              3
-            </button>
-          </div>
-          <button
-            onclick="nextPage()"
-            class="px-2 py-1 sm:px-4 sm:py-2 bg_darkbrowndirt text-white rounded-r-md disabled:opacity-50"
-          >
-            Next
-          </button>
-        </nav>
+        <div
+          id="space-container"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4 transition-opacity duration-300 opacity-100"
+        ></div>
+
+        <!-- Phân trang -->
+        <div
+          id="pagination"
+          class="flex justify-center items-center space-x-2 mt-6"
+        ></div>
+
+        <ul id="spaceList"></ul>
       </div>
     </section>
 
@@ -127,6 +97,6 @@
   </body>
 
   <script src="../js/main.js"></script>
-
+  <script type="module" src="../js/index.js"></script>
   <script type="module" src="../js/confirmation.js"></script>
 </html>
