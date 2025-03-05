@@ -3,11 +3,11 @@ import { v4 as uuidv4 } from "https://cdn.jsdelivr.net/npm/uuid@9.0.1/+esm";
 
 const paymentsRef = ref(db, "payments");
 
-export async function createPayment(bookingId, amount, paymentMethod, paymentType) {
-    const paymentId = uuidv4();
-    const paymentRef = ref(db, `payments/${paymentId}`);
+export async function createPayment(bookingId, amount) {
+  const paymentId = uuidv4();
+  const paymentRef = ref(db, `payments/${paymentId}`);
 
-  if (!bookingId || !userId || !amount || !paymentMethod) {
+  if (!bookingId || !amount) {
     console.error("Thiếu thông tin thanh toán!");
     return { status: "ERROR" };
   }
@@ -15,9 +15,9 @@ export async function createPayment(bookingId, amount, paymentMethod, paymentTyp
   const newPayment = {
     amount,
     bookingId,
-    paymentMethod,
+    paymentMethod: "Deposit",
     paymentStatus: "paid", // Giả sử thanh toán thành công ngay lập tức
-    paymentType,
+    paymentType: "Card",
     transactionDate: new Date().toISOString(),
   };
 
@@ -30,7 +30,6 @@ export async function createPayment(bookingId, amount, paymentMethod, paymentTyp
     return { status: "ERROR" };
   }
 }
-
 
 export async function getPayments() {
   try {

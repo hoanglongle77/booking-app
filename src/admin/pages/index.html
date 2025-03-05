@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../output.css" />
+  </head>
+
+  <body class="bg-gray-100 font-sans antialiased">
+    <div class="flex h-screen">
+      <div
+        id="sidebar"
+        class="bg-white text-gray-900 w-64 transition-all duration-300 ease-in-out shadow-lg h-screen flex flex-col relative"
+      >
+
+        <div class="p-6 border-b flex justify-between items-center">
+          <h1 id="sidebarTitle" class="text-xl font-bold text-black">
+            Booking Space
+          </h1>
+        </div>
+
+        <nav class="mt-6 flex-1">
+          <ul class="space-y-1">
+            <li>
+              <a
+                href="index.html?page=dashboard"
+                class="nav-link flex items-center px-6 py-3 hover:bg-gray-200 transition duration-300"
+              >
+                <i class="fas fa-home text-gray-700 w-6 text-center"></i>
+                <span class="nav-text flex-1">Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="index.html?page=bookings"
+                class="nav-link flex items-center px-6 py-3 hover:bg-gray-200 transition duration-300"
+              >
+                <i class="fas fa-calendar-check text-gray-700 w-6 text-center"></i>
+                <span class="nav-text flex-1">Booking Management</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="index.html?page=spaces"
+                class="nav-link flex items-center px-6 py-3 hover:bg-gray-200 transition duration-300"
+              >
+                <i class="fas fa-building text-gray-700 w-6 text-center"></i>
+                <span class="nav-text flex-1">Space Management</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="index.html?page=users"
+                class="nav-link flex items-center px-6 py-3 hover:bg-gray-200 transition duration-300"
+              >
+                <i class="fas fa-users text-gray-700 w-6 text-center"></i>
+                <span class="nav-text flex-1">User Management</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="index.html?page=payments"
+                class="nav-link flex items-center px-6 py-3 hover:bg-gray-200 transition duration-300"
+              >
+                <i class="fas fa-credit-card text-gray-700 w-6 text-center"></i>
+                <span class="nav-text flex-1">Payment Management</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Nút Toggle - Luôn Hiển Thị -->
+      <button
+        id="toggleSidebar"
+        class="absolute left-64 top-1/10 transform -translate-y-1/2 bg-yellow-200 text-black p-2 rounded-r-lg shadow-lg transition-all duration-300"
+      >
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+
+      <!-- Content -->
+      <div class="flex-1 flex flex-col">
+        <div id="content" class="p-6 flex-1 bg-gray-100"></div>
+      </div>
+    </div>
+
+    <script src="../js/layout.js" defer></script>
+    <script type="module" src="../js/main.js" defer></script>
+    <script type="module" src="../js/auth-check.js"></script>
+  </body>
+</html>

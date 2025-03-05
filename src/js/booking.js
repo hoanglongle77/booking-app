@@ -4,7 +4,7 @@ import {
   getSpaceById,
 } from "../database/db_space.js";
 import { createBooking } from "../database/db_bookings.js";
-import { createUser } from "../database/db_users.js";
+import { createUser, checkExistsUser } from "../database/db_users.js";
 
 let categories = null;
 let space = null;
@@ -68,7 +68,7 @@ const loadSpaceDetails = async (categoryId, spaceId) => {
 const calculateTimeDifference = (startTime, endTime) => {
   const start = new Date(`2000-01-01T${startTime}`);
   const end = new Date(`2000-01-01T${endTime}`);
-  return (end - start) / (1000 * 60 * 60);
+  return Math.round((end - start) / (1000 * 60 * 60));
 };
 
 const makeBooking = async (
@@ -86,13 +86,24 @@ const makeBooking = async (
     const totalAmount =
       calculateTimeDifference(checkinTime, checkoutTime) * price * 0.3;
 
-    const userCreating = await createUser(name, email, phone);
-    if (userCreating.status !== "OK") {
-      alert("Không tạo được user " + userCreating.message);
-      return;
+    let userId = null;
+    let userName = null;
+    const existuser = await checkExistsUser(name, email);
+    if (existuser) {
+      userId = existuser.userId;
+      userName = existuser.user.name;
+    } else {
+      const userCreating = await createUser(name, email, phone);
+      if (userCreating.status !== "OK") {
+        alert("Không tạo được user " + userCreating.message);
+        return;
+      } else {
+        userName = userCreating.newUser.name;
+        userId = userCreating.userId;
+      }
     }
+
     const roomId = selectedSpaceId;
-    const userId = userCreating.userId;
     const date = checkinDate;
     const timeStart = checkinTime;
     const timeEnd = checkoutTime;
@@ -100,6 +111,7 @@ const makeBooking = async (
     if (!roomId) {
       alert("roomid not found " + roomId);
     }
+
     const bookingCreating = await createBooking(
       userId,
       roomId,
@@ -111,18 +123,18 @@ const makeBooking = async (
 
     if (bookingCreating.status === "OK") {
       const data = {
-        userName: userCreating.newUser.name,
+        userName: userName,
         roomLocation: space.location,
         roomDescription: categories[selectedCategoryId].description,
         roomImg: space.imageUrl,
-        bookingId: bookingCreating.bookingId
+        bookingId: bookingCreating.bookingId,
       };
       localStorage.setItem(
         "bookingData",
         JSON.stringify(bookingCreating.newBooking)
       );
       localStorage.setItem("data", JSON.stringify(data));
-      window.location.href = "payment.html";
+      window.location.href = "confirm.html";
     }
   } catch (err) {
     alert(`Lỗi booking: ${err}`);
