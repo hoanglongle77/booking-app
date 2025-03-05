@@ -44,4 +44,4 @@ if (db) {
         });
 }
 
-export { db, ref, set, get };
+export { db, ref, set, get, update };
