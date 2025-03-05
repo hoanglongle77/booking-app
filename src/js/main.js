@@ -52,4 +52,5 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+  loadComponent("cta-placeholder","../components/cta.html");
 });

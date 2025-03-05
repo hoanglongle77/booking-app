@@ -46,3 +46,17 @@ export async function getUserById(userId) {
     console.error("Error fetching user:", error);
   }
 }
+export async function checkExistsUser(name, email) {
+  const usersSnapshot = await get(usersRef);
+  let userId = null;
+  if (usersSnapshot.exists()) {
+    const users = usersSnapshot.val();
+    for (const id in users) {
+      if (users[id].email === email && users[id].name === name) {
+        userId = id;
+        break;
+      }
+    }
+  }
+  return { user: usersSnapshot.val()[userId], userId };
+}

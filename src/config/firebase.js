@@ -1,4 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
 import { getDatabase, ref, set, get } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
 
 const firebaseConfig = {
@@ -14,9 +15,10 @@ const firebaseConfig = {
 
 let app;
 let db;
-
+let auth;
 try {
     app = initializeApp(firebaseConfig);
+    auth = getAuth(app);
     db = getDatabase(app);
     console.log("Firebase initialized successfully!");
 } catch (error) {
@@ -42,4 +44,4 @@ if (db) {
         });
 }
 
-export { db, ref, set, get };
+export { db, ref, set, get, auth };
