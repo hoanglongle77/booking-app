@@ -36,7 +36,7 @@
 .nav-link {
     color: #4a5568;
     transition: color 0.3s ease-in-out;
-    text-transform: ;
+    /* text-transform: ; */
 }
 
 .nav-link:hover {
@@ -113,4 +113,32 @@ body {
 
 .booking-button:hover {
     background-color: #ce721d;
+}
+
+/* ----------------admin------------------ */
+.bg_sun {
+    background-color: #FFECBC;
+}
+
+.bg_paid {
+    background-color: #FDFF85;
+}
+
+.text_paid {
+    color: #FFB703;
+} 
+
+.bg_done {
+    background-color: #B7FFB7;
+}
+
+.text-done {
+    color: #00FF26;
+}
+
+.bg_pending {
+    background-color:#FFD085;
+}
+.text_pending {
+    color: #FF6803;
 }

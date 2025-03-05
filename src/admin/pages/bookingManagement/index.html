@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Management</title>
+    <link href="../../../input.css" rel="stylesheet"/>
+    <link href="../../../output.css" rel="stylesheet"/>
+</head>
+<body class="bg-gray-100">
+    <div class="flex h-screen">
+
+        <div class="flex-1 p-6">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold">Booking Management</h1>
+            </div>
+            
+            <div class="mt-5 max-w-[300px]">
+                <div class="bg-white rounded-lg shadow-md p-4 flex items-center space-x-4">
+                    <div class="bg-yellow-100 p-2 rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" 
+                        class="w-7 h-7 text_paid">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10m-11 8h12a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <label for="date-filter" class="text-gray-700 font-medium">Filter by Date</label>
+                        <input type="date" id="date-filter" class="rounded-lg p-2 text-gray-700"/>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Table -->
+            <div class="mt-6 bg-white rounded-lg shadow-md border border-gray-400">
+                
+                <div class="flex justify-between p-2">
+                    <h2 class="text-2xl font-semibold p-4">Recent bookings</h2>
+
+                    <form class="text-2xl font-semibold p-4">   
+                        <div class="relative">
+                            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                                <svg class="w-4 h-4 text-black-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                                </svg>
+                            </div>
+                            <input type="search" id="search-input" class="block w-full p-2 ps-10 text-sm border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 " 
+                            placeholder="Search user name, email ..." />
+                        </div>
+                    </form>
+
+                </div>
+                
+
+                <table class="w-full border-collapse border border-gray-400 pb-4">
+                    <thead>
+                        <tr class="bg_sun border-b text-gray-500">
+                            <th class="p-2">User Name</th>
+                            <th class="p-2">Contact</th>
+                            <th class="p-2">Space</th>
+                            <th class="p-2">Amount</th>
+                            <th class="p-2">Date</th>
+                            <th class="p-2">Start - End</th>
+                            <th class="p-2">Status</th>
+                            <th class="p-2">Confirm</th>
+                        </tr>
+                    </thead>
+                    <tbody id="booking_data_table">
+
+                    </tbody>
+                </table>
+
+                <!-- Modal Edit Booking -->
+                <div id="editBookingModal" class="hidden fixed inset-0 bg-opacity-50 flex items-center justify-center">
+                    <div class="bg-white border-gray-400 rounded-lg shadow-lg p-6 w-96">
+                        <h2 class="text-lg font-semibold mb-4">Edit checkin date</h2>
+                        
+                        <input type="date" id="editBookingDate" class="w-full p-2 border rounded-lg mb-4">
+                        
+                        <div class="flex justify-end space-x-2">
+                            <button id="cancelEdit" class="bg-gray-300 text-gray-700 px-4 py-2 rounded-lg">Cancel</button>
+                            <button id="saveEdit" class="bg_done text_done px-4 py-2 rounded-lg">Save</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="../../js/booking.js"></script>
+</body>
+</html>

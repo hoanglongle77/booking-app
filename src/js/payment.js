@@ -1,4 +1,4 @@
-import { db, ref, set } from "../config/firebase.js";
+import { db, ref, set, update } from "../config/firebase.js";
 import { v4 as uuidv4 } from "https://cdn.jsdelivr.net/npm/uuid@9.0.1/+esm";
 
 document
@@ -26,16 +26,24 @@ document
     const paymentId = uuidv4();
     const paymentRef = ref(db, `payments/${paymentId}`);
     const newPayment = {
-        bookingId,
-        cardNumber: cardNum, // Lưu số thẻ (hoặc mã hóa để bảo mật)
-        amount,
-        status: "paid",
-        date: new Date().toISOString(),
+      bookingId,
+      cardNumber: cardNum, 
+      amount,
+      status: "paid",
+      date: new Date().toISOString(),
     };
-    console.log("Dữ liệu thanh toán:", JSON.stringify(newPayment));
 
     try {
+      // console.log(" Đang lưu payment...");
       await set(paymentRef, newPayment);
+      // console.log(" Payment saved successfully!");
+
+      //  Cập nhật status của booking**
+      const bookingRef = ref(db, `bookings/${bookingId}`);
+      // console.log(`🚀 Cập nhật status bookingId: ${bookingId} thành "paid"`);
+      await update(bookingRef, { status: "paid" });
+
+      // console.log(`✅ Booking ${bookingId} đã cập nhật thành "paid"`);
 
       // Xóa dữ liệu đặt phòng khỏi localStorage
       localStorage.removeItem("bookingData");
@@ -48,7 +56,6 @@ document
       modal.children[0].classList.add("scale-100");
 
     } catch (error) {
-      console.error("Lỗi khi lưu thanh toán:", error);
+      console.error("❌ Lỗi khi lưu payment hoặc update booking:", error);
     }
   });
-

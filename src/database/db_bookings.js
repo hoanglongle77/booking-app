@@ -1,4 +1,4 @@
-import { db, ref, set, get } from "../config/firebase.js";
+import { db, ref, set, get, update } from "../config/firebase.js";
 import { v4 as uuidv4 } from "https://cdn.jsdelivr.net/npm/uuid@9.0.1/+esm";
 
 const bookingsRef = ref(db, "bookings");
