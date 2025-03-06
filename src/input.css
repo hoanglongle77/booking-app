@@ -1,57 +1,55 @@
 @import "tailwindcss";
 
 .font-inter {
-    font-family: "Inter", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .bg_browndirt {
-    background-color: #dda15e;
+  background-color: #dda15e;
 }
 
 .text_browndirt {
-    color: #dda15e;
+  color: #dda15e;
 }
 
 .bg_darkbrowndirt {
-    background-color: #bc6c25;
+  background-color: #bc6c25;
 }
 
 .text_darkbrowndirt {
-    color: #bc6c25;
+  color: #bc6c25;
 }
 
 .border_darkbrowndirt {
-    border: solid 1px #bc6c25;
+  border: solid 1px #bc6c25;
 }
 
 .text_darkbrowndirt {
-    color: #bc6c25;
+  color: #bc6c25;
 }
 
 .bg_darkbrowndirt:hover {
-    background-color: #924e13;
-    transition: 0.5s;
+  background-color: #924e13;
+  transition: 0.5s;
 }
 
 .nav-link {
-    color: #4a5568;
-    transition: color 0.3s ease-in-out;
-    /* text-transform: ; */
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
+  color: #4a5568;
+  transition: color 0.3s ease-in-out;
+  text-transform: ;
 }
 
 .nav-link:hover {
-    color: #bc6c25;
+  color: #bc6c25;
 }
 
 .divider {
-    width: calc(100% - 200px);
-    /* Cách lề trái & phải 100px */
-    max-width: 1200px;
-    height: 1px;
-    background-color: #ddd;
-    margin: 24px auto;
+  width: calc(100% - 200px);
+  /* Cách lề trái & phải 100px */
+  max-width: 1200px;
+  height: 1px;
+  background-color: #ddd;
+  margin: 24px auto;
 }
 .booking-button {
   position: fixed;
@@ -72,91 +70,73 @@
 
 /* Khi màn hình nhỏ hơn 768px (tablet, mobile) */
 @media (max-width: 768px) {
-    .divider {
-        width: calc(100% - 40px);
-        /* Cách lề 20px mỗi bên */
-    }
+  .divider {
+    width: calc(100% - 40px);
+    /* Cách lề 20px mỗi bên */
+  }
 }
 
 /* ---------------shake---------------- */
 @keyframes shake {
-    0% {
-        transform: translateX(0);
-    }
+  0% {
+    transform: translateX(0);
+  }
 
-    25% {
-        transform: translateX(-5px);
-    }
+  25% {
+    transform: translateX(-5px);
+  }
 
-    50% {
-        transform: translateX(5px);
-    }
+  50% {
+    transform: translateX(5px);
+  }
 
-    75% {
-        transform: translateX(-5px);
-    }
+  75% {
+    transform: translateX(-5px);
+  }
 
-    100% {
-        transform: translateX(0);
-    }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .shake {
-    animation: shake 0.3s ease-in-out;
+  animation: shake 0.3s ease-in-out;
 }
 
 .border-red-500 {
-    border: 2px solid red !important;
+  border: 2px solid red !important;
 }
 
 html,
 body {
-    max-width: 100%;
-    overflow-x: hidden;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .booking-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #ce721d;
-    color: white;
-    padding: 15px 25px;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ce721d;
+  color: white;
+  padding: 15px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .booking-button:hover {
-    background-color: #ce721d;
+  background-color: #ce721d;
 }
 
-/* ----------------admin------------------ */
-.bg_sun {
-    background-color: #FFECBC;
-}
-
-.bg_paid {
-    background-color: #FDFF85;
-}
-
-.text_paid {
-    color: #FFB703;
-} 
-
-.bg_done {
-    background-color: #B7FFB7;
-}
-
-.text-done {
-    color: #00FF26;
-}
-
-.bg_pending {
-    background-color:#FFD085;
-}
-.text_pending {
-    color: #FF6803;
+.modal-overlay {
+  position: fixed; /* Đặt vị trí cố định trên toàn màn hình */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Màu nền đen với độ mờ 0.5 */
+  z-index: 999; /* Đảm bảo lớp này sẽ ở trên các phần tử khác */
 }
