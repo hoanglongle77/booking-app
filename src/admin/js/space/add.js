@@ -55,8 +55,6 @@ async function initializeFormFunctionality() {
   }
 
   const form = document.getElementById("add-space-form");
-  form.removeEventListener("submit", handleFormSubmit);
-  form.addEventListener("submit", handleFormSubmit);
   const closePopupBtn = document.getElementById("close-popup");
   const cancelBtn = document.getElementById("cancel-btn");
   const imageInput = document.getElementById("space-images");
@@ -65,14 +63,31 @@ async function initializeFormFunctionality() {
   );
   const popupContainer = document.getElementById("add-container");
 
-  closePopupBtn.addEventListener("click", () =>
-    popupContainer.classList.add("hidden")
-  );
-  cancelBtn.addEventListener("click", () =>
-    popupContainer.classList.add("hidden")
-  );
+  // Xóa event listener cũ nếu có
+  if (form.submitHandler) {
+    form.removeEventListener("submit", form.submitHandler);
+  }
 
-  imageInput.addEventListener("change", handleImagePreview);
+  // Tạo handler mới và lưu lại để có thể xóa sau này
+  form.submitHandler = handleFormSubmit;
+  form.addEventListener("submit", form.submitHandler);
+
+  if (closePopupBtn) {
+    closePopupBtn.addEventListener("click", () =>
+      popupContainer.classList.add("hidden")
+    );
+  }
+
+  if (cancelBtn) {
+    cancelBtn.addEventListener("click", () =>
+      popupContainer.classList.add("hidden")
+    );
+  }
+
+  if (imageInput) {
+    imageInput.addEventListener("change", handleImagePreview);
+  }
+
   function handleImagePreview(e) {
     const files = e.target.files;
     imagePreviewContainer.innerHTML = "";
@@ -99,8 +114,6 @@ async function initializeFormFunctionality() {
     imagePreviewContainer.appendChild(previewDiv);
   }
 
-  form.addEventListener("submit", handleFormSubmit);
-
   async function handleFormSubmit(e) {
     e.preventDefault();
     const submitBtn = form.querySelector('button[type="submit"]');
@@ -121,14 +134,6 @@ async function initializeFormFunctionality() {
     }
 
     try {
-      // Lấy phần tử categoryContainer
-      const categoryContainer = document.getElementById("category-container");
-      if (!categoryContainer) {
-        console.warn("⚠ Không tìm thấy categoryContainer trong DOM!");
-      } else {
-        categoryContainer.innerHTML = "";
-      }
-
       // Lưu đường dẫn ảnh
       const images = [];
       if (imageInput.files.length > 0) {
@@ -143,8 +148,9 @@ async function initializeFormFunctionality() {
         name: formData.get("name"),
         price_per_hour: Number.parseInt(formData.get("price")),
         description: formData.get("description"),
-        status: formData.get("status"),
-        imageUrl: images,
+        status: formData.get("status") || "available", // Đảm bảo có giá trị mặc định
+        imageUrl:
+          images.length > 0 ? images : ["../../../assets/img/default.png"], // Đảm bảo luôn có ảnh
         location: formData.get("location"),
         created_at: new Date().toISOString(),
         category: selectedCategory, // Lưu categoryId vào object
@@ -153,16 +159,15 @@ async function initializeFormFunctionality() {
       // Lưu Space vào danh mục đã chọn
       await saveSpace(spaceData);
 
-      // Sau khi lưu thành công, làm mới danh sách spaces
-      fetchSpacesRealTime((spaces) => {
-        console.log("Danh sách spaces sau khi thêm mới:", spaces);
-        // Cập nhật lại giao diện hoặc DOM ở đây nếu cần
-      });
-
       alert("✅ Space đã được thêm thành công vào danh mục!");
+
+      // Reset form và đóng popup
       form.reset();
       imagePreviewContainer.innerHTML = "";
       popupContainer.classList.add("hidden");
+
+      // Reload trang để hiển thị dữ liệu mới
+      window.location.reload();
     } catch (error) {
       console.error("❌ Lỗi khi lưu Space:", error);
       alert("Đã xảy ra lỗi, vui lòng thử lại!");

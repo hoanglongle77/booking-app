@@ -161,7 +161,7 @@ export function fetchSpacesRealTime() {
 class
 =
 "
-hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50
+hidden fixed inset-0 modal-overlay bg-opacity-50 flex justify-center items-center z-50
 "
 >
 <
