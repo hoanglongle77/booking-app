@@ -5,34 +5,58 @@ const usersRef = ref(db, "users");
 
 // Thêm User
 export async function createUser(name, email, phone, role = "customer") {
-    const userId = uuidv4();
-    const userRef = ref(db, `users/${userId}`);
-    const newUser = { name, email, phone, role };
+  if (!name || !email || !phone) {
+    return { status: "ERROR", message: "Missing required fields" };
+  }
+  const userId = uuidv4();
+  const userRef = ref(db, `users/${userId}`);
+  const newUser = {
+    name: name || "Unknown",
+    email: email || "no-email@example.com",
+    phone: phone || "N/A",
+    role,
+  };
 
-    try {
-        await set(userRef, newUser);
-        console.log("User added successfully!");
-    } catch (error) {
-        console.error("Error adding user:", error);
-    }
+  try {
+    await set(userRef, newUser);
+    console.log("User added successfully!");
+    return { status: "OK", userId, newUser };
+  } catch (error) {
+    console.error("Error adding user:", error);
+    return { status: "ERROR", message: error };
+  }
 }
 
 // Lấy tất cả Users
 export async function getUsers() {
-    try {
-        const snapshot = await get(usersRef);
-        return snapshot.exists() ? snapshot.val() : {};
-    } catch (error) {
-        console.error("Error fetching users:", error);
-    }
+  try {
+    const snapshot = await get(usersRef);
+    return snapshot.exists() ? snapshot.val() : {};
+  } catch (error) {
+    console.error("Error fetching users:", error);
+  }
 }
 
 // Lấy User theo ID
 export async function getUserById(userId) {
-    try {
-        const snapshot = await get(ref(db, `users/${userId}`));
-        return snapshot.exists() ? snapshot.val() : null;
-    } catch (error) {
-        console.error("Error fetching user:", error);
+  try {
+    const snapshot = await get(ref(db, `users/${userId}`));
+    return snapshot.exists() ? snapshot.val() : null;
+  } catch (error) {
+    console.error("Error fetching user:", error);
+  }
+}
+export async function checkExistsUser(name, email) {
+  const usersSnapshot = await get(usersRef);
+  let userId = null;
+  if (usersSnapshot.exists()) {
+    const users = usersSnapshot.val();
+    for (const id in users) {
+      if (users[id].email === email && users[id].name === name) {
+        userId = id;
+        break;
+      }
     }
+  }
+  return { user: usersSnapshot.val()[userId], userId };
 }

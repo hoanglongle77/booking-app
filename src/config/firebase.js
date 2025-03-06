@@ -1,19 +1,47 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
-import { getDatabase } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+import { getDatabase, ref, set, get, update } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCWvvTlro7MdG5HMXVJCFtzSv1fAWECX2I",
-  authDomain: "booking-space-94e9c.firebaseapp.com",
-  databaseURL:
-    "https://booking-space-94e9c-default-rtdb.asia-southeast1.firebasedatabase.app/",
-  projectId: "booking-space-94e9c",
-  storageBucket: "booking-space-94e9c.firebasestorage.app",
-  messagingSenderId: "118952243617",
-  appId: "1:118952243617:web:ae386d5b660225b1bd9be0",
-  measurementId: "G-CCMHDKSY85",
+    apiKey: "AIzaSyCWvvTlro7MdG5HMXVJCFtzSv1fAWECX2I",
+    authDomain: "booking-space-94e9c.firebaseapp.com",
+    databaseURL: "https://booking-space-94e9c-default-rtdb.asia-southeast1.firebasedatabase.app/",
+    projectId: "booking-space-94e9c",
+    storageBucket: "booking-space-94e9c.firebasestorage.app",
+    messagingSenderId: "118952243617",
+    appId: "1:118952243617:web:ae386d5b660225b1bd9be0",
+    measurementId: "G-CCMHDKSY85"
 };
 
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
+let app;
+let db;
+let auth;
+try {
+    app = initializeApp(firebaseConfig);
+    auth = getAuth(app);
+    db = getDatabase(app);
+    console.log("Firebase initialized successfully!");
+} catch (error) {
+    console.error("Firebase initialization failed:", error);
+}
+if (db) {
+    const testRef = ref(db, 'test/connection');
 
-export { db, app }; // Xuất cả app và db để dùng ở các file khác
+    set(testRef, { connected: true })
+        .then(() => {
+            console.log("Database write successful!");
+            return get(testRef);
+        })
+        .then((snapshot) => {
+            if (snapshot.exists()) {
+                console.log("Database read successful:", snapshot.val());
+            } else {
+                console.error("Database read failed: Data does not exist.");
+            }
+        })
+        .catch((error) => {
+            console.error("Database operation failed:", error);
+        });
+}
+
+export { db, ref, set, get, update };

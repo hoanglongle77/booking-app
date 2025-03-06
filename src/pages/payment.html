@@ -22,55 +22,35 @@
           <div class="bg-orange-100 p-4 md:p-6 rounded-lg">
             <h2 class="text-lg font-semibold">Order Summary</h2>
             <div class="border-b border-gray-300 my-3 md:my-4"></div>
-
+          
             <div class="text-sm text-gray-600 flex justify-between mt-2">
-              <span>Date: 27/02/2025</span>
-              <span>Time: 14:00 - 17:00</span>
+              <span id="booking-date">Date: --/--/----</span>
+              <span id="booking-time">Time: --:-- - --:--</span>
             </div>
-
+          
             <div class="border-b border-gray-300 my-3 md:my-4"></div>
-
+          
             <div class="w-full">
-              <!-- Mobile Layout (mặc định) -->
-              <div class="flex flex-col gap-2 sm:hidden">
-                <img
-                  src="https://files.oaiusercontent.com/file-EFuPLw3NN1xk5JiUaoRmT4?se=2025-02-27T08%3A18%3A34Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D2ce08279-5904-47ab-9dae-2dc5a319d0d0.webp&sig=MapCduG%2B/zgPqWYhh1s7QfxrtfXRNzBMJ09x08DjcGw%3D"
-                  alt="Space Image"
-                  class="w-full h-35 rounded-lg"
-                />
-                <div class="flex justify-between">
-                  <div class="">
-                    <h3 class="font-semibold text-lg">Space1</h3>
-                    <p class="text-sm text-gray-500">Description</p>
-                  </div>
-                  <div class="">
-                    <h3 class="font-semibold text-xl">$49.80</h3>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Desktop Layout (mặc định) -->
-              <div class="hidden sm:flex items-center justify-between w-full">
+              <div class="sm:flex items-center justify-between w-full">
                 <div class="flex items-center space-x-4">
-                  <img
+                  <img id="space-img"
                     src="https://files.oaiusercontent.com/file-EFuPLw3NN1xk5JiUaoRmT4?se=2025-02-27T08%3A18%3A34Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D2ce08279-5904-47ab-9dae-2dc5a319d0d0.webp&sig=MapCduG%2B/zgPqWYhh1s7QfxrtfXRNzBMJ09x08DjcGw%3D"
                     alt="Space Image"
                     class="w-16 h-16 rounded-lg"
                   />
                   <div>
-                    <h3 class="font-semibold">Space1</h3>
-                    <p class="text-sm text-gray-500">Description</p>
+                    <h3 id="space-name" class="font-semibold">--</h3>
+                    <p id="space-description" class="text-sm text-gray-500">--</p>
                   </div>
                 </div>
                 <div class="py-4">
-                  <h3 class="font-semibold">$49.80</h3>
-                  <p class="text-sm text-gray-500">3 hours</p>
+                  <h3 id="total-price" class="font-semibold">-- $</h3>
                 </div>
               </div>
             </div>
-
+          
             <div class="border-b border-gray-300 my-3 md:my-4"></div>
-
+          
             <div
               class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3"
             >
@@ -85,27 +65,28 @@
                 Apply
               </button>
             </div>
-
+          
             <div class="border-b border-gray-300 my-3 md:my-4"></div>
-
+          
             <div class="text-sm text-gray-700 space-y-2">
               <div class="flex justify-between">
                 <span>Subtotal (30% prepayment)</span>
-                <span>$49.80</span>
+                <span id="subtotal">-- $</span>
               </div>
               <div class="flex justify-between">
                 <span>Taxes</span>
-                <span>$7.24</span>
+                <span id="tax">-- $</span>
               </div>
             </div>
-
+          
             <div class="border-b border-gray-300 my-3 md:my-4"></div>
-
+          
             <div class="flex justify-between">
               <div class="font-bold">Total:</div>
-              <span class="text-orange-600 text-xl font-bold">$59.28</span>
+              <span id="final-total" class="text-orange-600 text-xl font-bold">-- $</span>
             </div>
           </div>
+          
 
           <!-- Payment Section -->
           <div class="p-4 md:p-6">
@@ -188,9 +169,8 @@
 
               <button
                 type="submit"
-                class="mt-4 bg-orange-700 text-white w-full py-3 rounded-lg font-bold"
-              >
-                Pay USD$59.28
+                class="mt-4 bg-orange-700 text-white w-full py-3 rounded-lg font-bold">
+                Pay
               </button>
             </form>
 
@@ -201,30 +181,56 @@
             </p>
           </div>
         </div>
+
+        <div id="success-modal"
+        class="fixed inset-0 flex items-center justify-center bg-opacity-50 hidden opacity-0 transition-opacity duration-300">
+        <div
+            class="bg-white p-6 rounded-lg shadow-lg w-96 transform scale-95 transition-transform duration-300 text-center">
+            <div class="flex justify-center">
+                <div class="w-12 h-12 flex items-center justify-center bg-green-100 rounded-full">
+                    <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" stroke-width="2"
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                </div>
+            </div>
+            <h2 class="font-inter text-4xl font-bold text_darkbrowndirt mb-2">
+                Successful
+            </h2>
+            <p class="text-gray-800 mb-4">
+                You pay successfully!
+            </p>
+            <button id="close-modal" class="w-full p-2 bg_darkbrowndirt text-white rounded hover:bg-sky-700">
+                Back to home
+            </button>
+        </div>
+    </div>
+
+
       </div>
     </div>
     <div id="footer-placeholder"></div>
   </body>
 </html>
-<script>
+<script type="module">
   document
-    .getElementById("payment-form")
-    .addEventListener("submit", function (event) {
-      event.preventDefault();
-      const cardNum = document.getElementById("card-number").value.trim();
-      const expDate = document.getElementById("exp-date").value.trim();
-      const cvv = document.getElementById("cvv").value.trim();
-      if (!cardNum || !expDate || !cvv) {
-        alert("You need too type information!");
-        return;
-      }
-      const paymentData = {
-        cardNum,
-        expDate,
-        cvv,
-      };
-      localStorage.setItem("paymentData", JSON.stringify(paymentData));
-      window.location.href = "./payment-successfull.html";
-    });
+  .getElementById("close-modal")
+  .addEventListener("click", function () {
+    let modal = document.getElementById("success-modal");
+    modal.classList.add("opacity-0");
+    modal.children[0].classList.remove("scale-100");
+    setTimeout(() => {
+      modal.classList.add("hidden");
+
+      window.location.href = "index.html"; 
+      
+    }, 300);
+  });
+
+
+
 </script>
+
 <script src="../js/main.js"></script>
+<script type="module" src="../js/confirmation.js"></script>
+<script type="module" src="../js/payment.js"></script>
