@@ -32,7 +32,7 @@ export async function openEditPopup(categoryId, spaceId) {
   }
 
   try {
-    const response = await fetch("space_edit.html");
+    const response = await fetch("edit.html");
     if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
 
     popupContainer.innerHTML = await response.text();
@@ -50,7 +50,7 @@ export async function openEditPopup(categoryId, spaceId) {
 
     await initializeEditForm(categoryId, spaceId);
   } catch (error) {
-    console.error("❌ Lỗi khi tải space_edit.html:", error);
+    console.error("❌ Lỗi khi tải edit.html:", error);
   }
 }
 

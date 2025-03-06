@@ -5,7 +5,7 @@ import {
   remove,
 } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
 import { db } from "../../../config/firebase.js";
-import { openEditPopup } from "../../js/space/edit.js";
+import { openEditPopup } from "./edit.js";
 
 // Global variables for stats
 let totalSpaces = 0;

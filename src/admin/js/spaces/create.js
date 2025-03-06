@@ -17,14 +17,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   openPopupBtn.addEventListener("click", () => {
-    fetch("space_add.html")
+    fetch("create.html")
       .then((response) => response.text())
       .then((html) => {
         popupContainer.innerHTML = html;
         popupContainer.classList.remove("hidden");
         initializeFormFunctionality();
       })
-      .catch((error) => console.error("Lỗi khi tải space_add.html:", error));
+      .catch((error) => console.error("Lỗi khi tải create.html:", error));
   });
 
   popupContainer.addEventListener("click", (e) => {
