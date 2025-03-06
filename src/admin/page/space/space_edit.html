@@ -1,0 +1,215 @@
+<div
+  class="bg-white rounded-xl shadow-lg w-full max-w-2xl mx-auto overflow-hidden"
+>
+  <!-- Header -->
+  <div class="bg-gradient-to-r from-blue-600 to-blue-700 p-4">
+    <div class="flex justify-between items-center">
+      <h2 class="text-xl font-bold text-white flex items-center">
+        <i class="fas fa-edit mr-2"></i>
+        Edit Space
+      </h2>
+      <button
+        id="close-popup"
+        class="text-white hover:text-gray-200 focus:outline-none"
+      >
+        <i class="fas fa-times text-xl"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Form -->
+  <form id="edit-space-form" class="p-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+      <!-- Space Name and Category -->
+      <div class="col-span-1">
+        <label class="block text-sm font-medium text-gray-700 mb-1"
+          >Space Name*</label
+        >
+        <div class="relative">
+          <div
+            class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+          >
+            <i class="fas fa-tag text-gray-400"></i>
+          </div>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Enter space name"
+            required
+            class="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          />
+        </div>
+      </div>
+
+      <div class="col-span-1 w-full max-w-md">
+        <label
+          for="category-select"
+          class="block text-sm font-medium text-gray-700 mb-1"
+          >Category*</label
+        >
+        <div class="relative">
+          <div
+            class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+          >
+            <i class="fas fa-folder text-gray-400"></i>
+          </div>
+          <select
+            id="category-select"
+            name="category"
+            required
+            class="w-full pl-10 pr-10 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none bg-white"
+          >
+            <option value="">Select a category</option>
+          </select>
+          <div
+            class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none"
+          >
+            <i class="fas fa-chevron-down text-gray-400"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Price and Location -->
+      <div class="col-span-1">
+        <label class="block text-sm font-medium text-gray-700 mb-1"
+          >Price (VND/hour)*</label
+        >
+        <div class="relative">
+          <div
+            class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+          >
+            <i class="fas fa-money-bill-wave text-gray-400"></i>
+          </div>
+          <input
+            type="number"
+            name="price"
+            id="price"
+            placeholder="Enter price"
+            min="0"
+            required
+            class="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          />
+        </div>
+      </div>
+
+      <div class="col-span-1">
+        <label class="block text-sm font-medium text-gray-700 mb-1"
+          >Location*</label
+        >
+        <div class="relative">
+          <div
+            class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+          >
+            <i class="fas fa-map-marker-alt text-gray-400"></i>
+          </div>
+          <input
+            type="text"
+            name="location"
+            id="location"
+            placeholder="Enter location"
+            required
+            class="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          />
+        </div>
+      </div>
+
+      <!-- Status -->
+      <div class="col-span-2">
+        <label class="block text-sm font-medium text-gray-700 mb-1"
+          >Status*</label
+        >
+        <div class="relative">
+          <div
+            class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+          >
+            <i class="fas fa-circle text-gray-400"></i>
+          </div>
+          <select
+            name="status"
+            id="status"
+            required
+            class="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none"
+          >
+            <option value="available">Available</option>
+            <option value="unavailable">Unavailable</option>
+          </select>
+          <div
+            class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none"
+          >
+            <i class="fas fa-chevron-down text-gray-400"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Description -->
+      <div class="col-span-2">
+        <label class="block text-sm font-medium text-gray-700 mb-1"
+          >Description*</label
+        >
+        <div class="relative">
+          <div
+            class="absolute top-3 left-0 pl-3 flex items-start pointer-events-none"
+          >
+            <i class="fas fa-align-left text-gray-400"></i>
+          </div>
+          <textarea
+            name="description"
+            id="description"
+            placeholder="Enter space description"
+            rows="2"
+            required
+            class="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          ></textarea>
+        </div>
+      </div>
+
+      <!-- Images -->
+      <div class="col-span-2">
+        <label class="block text-sm font-medium text-gray-700 mb-1"
+          >Images*</label
+        >
+        <div
+          class="border-2 border-dashed border-gray-300 rounded-lg p-3 text-center hover:bg-gray-50 transition-colors cursor-pointer"
+        >
+          <input
+            type="file"
+            id="space-images"
+            name="images"
+            multiple
+            accept="image/*"
+            class="hidden"
+          />
+          <label for="space-images" class="cursor-pointer">
+            <div class="flex items-center justify-center">
+              <i class="fas fa-cloud-upload-alt text-xl text-gray-400 mr-2"></i>
+              <p class="text-sm text-gray-500">
+                Drag and drop images or click to browse
+              </p>
+            </div>
+          </label>
+        </div>
+        <div id="image-preview-container" class="flex flex-wrap mt-2">
+          <!-- Image previews will be added here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Form Actions -->
+    <div class="flex justify-end space-x-3 border-t mt-4 pt-3">
+      <button
+        type="button"
+        id="cancel-btn"
+        class="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400"
+      >
+        <i class="fas fa-times mr-2"></i>Cancel
+      </button>
+      <button
+        type="submit"
+        class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
+      >
+        <i class="fas fa-edit mr-2"></i>Edit Space
+      </button>
+    </div>
+  </form>
+</div>
